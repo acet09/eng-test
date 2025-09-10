@@ -60,9 +60,12 @@
         background-color: #28a745;
       }
       #messageBox {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: bold;
         margin-top: 20px;
+      }
+      #com_mss{
+        color : gray;
       }
     </style>
   </head>
@@ -93,6 +96,10 @@
 
       <!-- 결과 메시지 -->
       <div id="messageBox"></div>
+      <!-- 해설 메시지-->
+      <div id="commentBox">
+        <p id="com_mss"></p>
+      </div>
     </div>
 
     <script>
@@ -107,7 +114,11 @@
         { word: "include", hint: "포함하다" },
         { word: "supply", hint: "공급하다 - (대량으로 지속적으로 공급하는 것 / 지속적, 물질적, 직접적 제공)" },
         { word: "provide", hint: "제공하다, 주다 - (필요한 것을 주는 것 / 준비하여 제공 , 추상적, 행위 제공)" },
-        { word: "receive", hint: "받다, 수취하다, 경험하다" },
+        { word: "receive", 
+          hint: "1.받다, 수취하다<br>2.누군가(수동적)로부터 어떤 것을 건네받거나<br>3.정보 또는 경험을 얻을 때",
+          comment: `I received a package from my friend.<br>
+                    (친구에게서 소포를 받았다.)`
+        },
         { word: "resolve", hint: "해결하다, 풀다 (문제나 갈등)" },
         { word: "serialization", hint: "직렬화 / Object, Data를 바이트 스트림 형태로 변환한는 포맷 기술" },
         { word: "initialize", 
@@ -116,7 +127,11 @@
                     (이 함수는 게임을 점수 0으로 초기화했어요.)`
         },
         { word: "synchronized", hint: "동기화" },
-        { word: "request", hint: "요청" },
+        { word: "request", 
+          hint: "1.요청,신청<br>2.요청하다,부탁하다",
+          comment: `I request that you send me the documents by tomorrow.<br> 
+                  (저는 내일까지 서류를 보내주시기를 요청합니다.)`
+        },
         { word: "response", hint: "응답" },
         { word: "require", hint: "요구하다, 필요하다 (무엇이 필요하거나 요구됨)" },
         { word: "acquire", hint: "1.<재산·권리 등을> 취득하다, 획득하다<br>2.<지식·학문 등을 노력하여> 얻다, 배우다, 습득하다; <습관 등을> 몸에 익히다, 지니게 되다 (=get)<br>3.<비평 등을> 받게 하다" },
@@ -126,9 +141,15 @@
                     (그것은 아주 대담한 발언이군요.)`
         },
         { word: "prevent", hint: "막다, 방해하다" },
-        { word: "valid", hint: "유효한" },
-        { word: "invalid", hint: "유효하지 않은" },
-        { word: "variable", hint: "변하기 쉬운/ 변수" },
+        { word: "valid", 
+          hint: "1.유효한,타당한,정당한<br>2.논리적 근거에 부합할때",
+          comment: `This coupon is valid until the end of the month.<br>(이 쿠폰은 이달 말까지 유효합니다.)`
+        },
+        { word: "invalid", 
+          hint: "1.유효하지 않은,무효의<br>2.효력이 없거나,기준에 미달",
+          comment: `The password you entered is invalid.<br>(입력하신 비밀번호가 유효하지 않습니다.)`
+        },
+        { word: "variable", hint: "1.변수,변하기 쉬운" },
         { word: "value", hint: "가치" },
         { word: "available", hint: "사용 가능한, 이용할 수 있는" },
         { word: "specify", hint: "명시하다, 지정하다, 상세히 기술하다" },
@@ -183,7 +204,10 @@
           comment: `The phones were off during the meeting.<br>
                     (회의 동안 전화기들은 꺼져 있었습니다.)` 
         },
-        { word: "until", hint: "~까지, ~에 이르기까지 (언제까지)" },
+        { word: "until", 
+          hint: "1.~까지<br>2.기간의 끝을 명확히",
+          comment: `We stayed there until Monday.<br>(우리는 월요일 까지 그곳에 머물렀다.)`
+        },
         { word: "process", hint: "처리 (체계적·단계적으로 처리하다 , 데이터를 처리한다)" },
         { word: "handle", hint: "처리 (직접 다루다, 대응하다, 문제를 해결하다 ,  &quot문제, 상황, 도구&quot 등을 처리한다) " },
         { word: "manipulation", hint: "1.교묘한 처리, 솜씨 있는 취급[조종]<br>2.시장 조작, 조작된 가격<br>3.조작, 속임수" },
@@ -202,7 +226,11 @@
         { word: "behavior", hint: "동작, 행동" },
         { word: "accept", hint: "수용하다, 받아들이다, 순응하다" },
         { word: "access", hint: "접근" },
-        { word: "authentication", hint: "인증" },
+        { word: "authentication", 
+          hint: "1.인증,신원확인<br>2.기술,보안,법률등에서 공식적 표현방법",
+          comment: `The website requires two-factor authentication for extra security.<br> 
+                    (이 웹사이트는 추가 보안을 위해 2단계 인증을 요구합니다.)`
+        },
         { word: "authorization", hint: "권한부여, 허가" },
         { word: "storing", hint: "체계적으로 보관" },
         { word: "saving", hint: "손실로부터 보호하고 잃지 않도록 보존 , 파일로 기록" },
@@ -210,9 +238,17 @@
         { word: "being", hint: "존재, 존재하는, 현재의" },
         { word: "retrieve", hint: "검색하다, 되찾다', '가져오다', '회수하다', '복구하다', '" },
         { word: "generate", hint: "생성하다, 만들어내다, 발생시키다" },
-        { word: "declarations", hint: "1.선언, 발표 2.신고", comment :"You must make a declaration before using a variable.<br>(변수를 사용하기 전에 선언을 해야 한다.)" },
+        { word: "declarations", 
+          hint: "1.선언, 발표 2.신고", 
+          comment :`You must make a declaration before using a variable.<br>
+          (변수를 사용하기 전에 선언을 해야 한다.)` 
+        },
         { word: "certain", hint: "확실하다고 생각하는 (형용사 / 확신하는 상태 또는 특정한 것)" },
-        { word: "ensure", hint: "확실, 보장하다 (동사 / 확실하게 만드는 행위, 조취를 취하는 행동)" },
+        { word: "ensure", 
+          hint: "1.확실히 하다,보장하다<br>2.책임감이 강조된 어감",
+          comment: `We must ensure the safety of our customers<br>
+                  (우리는 고객들의 안전을 보장해야 합니다.)`
+        },
         { word: "avoid", hint: "피하다, 기피, 무효" },
         { word: "modify", hint: "수정하다" },
         { word: "reject", hint: "거절하다, 거부하다" },
@@ -232,7 +268,7 @@
         { word: "validation", hint: "유효성, 확인, 유효성검사" },
         { word: "illegal", hint: "불법" },
         { word: "computation", 
-          hint: "1.산술,계산<br>2.정보 처리 과정,컴퓨터과학", 
+          hint: "1.산술,계산<br>2.정보 처리,논리적 연산<br>3.알고리즘,컴퓨터 공학", 
           comment: `Computers perform millions of computations every second.<br>
                     (컴퓨터는 매 초 수백만 개의 계산을 수행합니다.)`
         },
@@ -254,22 +290,38 @@
         { word: "absence", hint: "부재, 결석" },
         { word: "clear", hint: "명확한 ,맑은, 투명한" },
         { word: "might", hint: "1.may의 과거형<br>2.~해도 좋다<br>3.~할지도 모른다" },
-        { word: "termination", hint: "종료,결말,결과" },
+        { word: "termination", 
+          hint: "1.종료,마감<br>2.돌이킬 수 없는 최종적인 끝",
+          comment: `We have received your request for service termination<br>
+                    (서비스 종료 요청을 접수했습니다.)`
+        },
         { word: "increment", 
           hint: "1.증가<br>2.정해진 양만큼 점진적으로 늘어난", 
           comment: `The program will increment the counter by one.<br>
                     (그 프로그램은 카운터의 값을 1씩 증가시킬 것입니다.)`
         },
-        { word: "decrement", hint: "감소" },
+        { word: "decrement", 
+          hint: "1.감소<br>2.정해진 값만큼 줄일 때",
+          comment: `We need to decrement the counter by one<br>
+                    (카운터를 1씩 줄여야 합니다.)`
+        },
         { word: "reduce", hint: "줄이다" },
-        { word: "subtract", hint: "빼다" },
+        { word: "subtract", 
+          hint: "1.빼다,공제하다<br>2.주로 계산에 사용",
+          comment : `We need to subtract the expenses from the revenue.<br> 
+                    (우리는 수입에서 비용을 빼야 한다.)`
+        },
         { word: "contain", hint: "담고 있다, 포함하다" },
         { word: "condition", 
           hint: "1.현 &quot상태&quot 나타내거나<br>2.무언가 가능해지기 위해 필요한 &quot조건&quot",
           comment: `We will go on a picnic, on the condition that it doesn't rain.<br>
                     (비가 오지 않는다는 조건하에 우리는 소풍을 갈 것입니다.)` 
         },
-        { word: "whether", hint: "~인지 (아닌지)" },
+        { word: "whether", 
+          hint: "1.~인지 아닌지,<br>2.불확실한 상황<br>3.둘 이상의 가능성 중 하나 택",
+          comment: `The project will succeed whether we get the funding or not.<br> 
+                    (우리가 자금을 받든 안 받든 프로젝트는 성공할 것이다.)`
+        },
         { word: "determined", hint: "결정된, 굳게 결심한" },
         { word: "cryptographic", hint: "암호화" },
         { word: "exemption", hint: "면제" },
@@ -302,18 +354,34 @@
                     (연사는 그 이론을 현실과 연관시키려고 했습니다.)`
         },
         { word: "will cause", hint: "~의 원인이 될 것이다" },
-        { word: "cause", hint: "원인" },
-        { word: "operations", hint: "1.작동,움직임<br>2.운전,작업" },
-        { word: "operate", hint: "1.<기계·기관 등이> 움직이다, 일하다<br> <회사·공장이> 조업하다<br>2.작용하다, 영향을 끼치다" },
+        { word: "cause", 
+          hint: "1.원인,이유<br>2.야기하다,초래하다", 
+          comment: `Smoking can cause serious health problems.<br> 
+                    (흡연은 심각한 건강 문제를 야기할 수 있습니다.)`
+        },
+        { word: "operate", 
+          hint: "1.<기계·기관 등이>작동하다<br>2.<회사·공장이>운영하다",
+          comment: `This machine is easy to operate.<br>(이 기계는 작동하기 쉽다.)`
+        },
         { word: "certain arguments", hint: "특수 인자" },
         { word: "encapsulates", hint: "캡슐화" },
         { word: "often", hint: "1.흔히, 종종, 자주<br>2.대개, 많은 경우에" },
         { word: "each other", hint: "각각 (상대와 상호작용)" },
         { word: "performance", hint: "수행, 달성, 실적" },
-        { word: "performs", hint: "수행하다" },
-        { word: "without", hint: "~이 없이" },
+        { word: "performs", 
+          hint: "1.수행하다,공연하다",
+          comment: `The doctor performs the surgery.<br>(의사가 수술을 수행합니다.)`
+        },
+        { word: "with out", 
+          hint: "1.~이 없이,~을 가지지 않고",
+          comment: `You can get this job without any experience.<br>(경험 없이도 이 직업을 얻을 수 있습니다.)`
+        },
         { word: "either", hint: "어느 하나" },
-        { word: "purpose", hint: "의도, 목적" },
+        { word: "purpose", 
+          hint: "1.목적,용도<br>2.계획성,진지한",
+          comment: `The tool serves a dual purpose: it's a wrench and a hammer.<br> 
+                    (이 도구는 두 가지 용도를 가지고 있습니다: 렌치이자 망치입니다.)`
+        },
         { word: "Priority", hint: "우선 순위" },
         { word: "flexible", 
           hint: "1.유연한,융통성 있는<br>2.경직되지 않고 탄력적",
@@ -339,12 +407,18 @@
         { word: "declare", hint: "1.공식적으로 밝히다, 선언하다" },
         { word: "granting", hint: "부여하다" },
         { word: "complex", hint: "복잡한" },
-        { word: "modern", hint: "현대" },
+        { word: "modern", 
+          hint: "1.현대의, 근대의, 진보적<br>2.19세기 말~20세기 초<br>3.새로운 방식,사상,양식",
+          comment: `She prefers modern art to classical art.<br>(그녀는 고전 미술보다 현대 미술을 선호한다.)`
+        },
         { word: "upcoming", hint: "다가오는, 곧 있을 (미래에 예정된 / 행사, 일정, 출시 등 )" },
         { word: "in coming", hint: "들어오는, 도착하는 (안으로 들어오는 / 전화, 메일, 사람, 물건의 흐름)" },
         { word: "infections", hint: "감염" },
         { word: "fuel", hint: "연료" },
-        { word: "Suggest", hint: "제안하다 (일상적, 개인적인 생각)" },
+        { word: "Suggest", 
+          hint: "1.제안하다<br>2.암시하다,시사하다<br>3.부드러운 어감",
+          comment: `I suggest we go to a movie tonight.<br>(오늘 밤에 영화 보러 가는 것을 제안해요.)`
+        },
         { word: "Propose", hint: "제안하다 (형식적, 신중한, 오랜 시간 준비한)" },
         { word: "offer", hint: "제공하다 (선택할 수 있도록 제안하는 것)" },
         { word: "potential", 
@@ -377,6 +451,8 @@
       var submitButton = document.getElementById("submitButton");
       var newGameButton = document.getElementById("newGameButton");
       var messageBox = document.getElementById("messageBox");
+      var commentBox = document.getElementById("com_mss");  
+
 
       // '제출' 버튼 클릭 시 실행될 함수
       function checkGuess() {
@@ -396,7 +472,8 @@
         // 입력 값과 정답을 비교
         if (userGuess === correctAnswer) {
           // 정답인 경우
-          messageBox.innerHTML = `<span style="color: blue; font-size: 25px;">정답입니다!</span> 다음 게임을 시작하세요.<br>` + correctComment;
+          messageBox.innerHTML = `<span style="color: blue; font-size: 25px;">정답입니다!</span> 다음 게임을 시작하세요.`;
+          commentBox.innerHTML = correctComment;
           submitButton.disabled = true; // 버튼 비활성화
           userInputElement.disabled = true; // 입력창 비활성화
           usedWords.push(correctAnswer); // 맞힌 단어를 사용한 단어 목록에 추가
@@ -406,7 +483,8 @@
           if (attemptsLeft === 0) {
             // 남은 기회가 없으면
             messageBox.innerHTML =
-              '<span style="color: #dc143c; font-size: 25px;">틀렸습니다.</span> 정답은 "' + correctAnswer + '"입니다.<br>'  + correctComment;
+              '<span style="color: #dc143c; font-size: 25px;">틀렸습니다.</span> 정답은 "' + correctAnswer + '"입니다.';
+            commentBox.innerHTML = correctComment;
             submitButton.disabled = true;
             userInputElement.disabled = true;
           } else {
@@ -421,7 +499,8 @@
       function startNewGame() {
         // 모든 단어를 다 썼는지 확인
         if (usedWords.length === words.length) {
-          messageBox.textContent = "모든 단어를 다 맞췄습니다. 대단해요!";
+          messageBox.innerHTML = `<span style="color: green;">모든 단어를 다 맞췄습니다. 대단해요!😎</span>`;
+          commentBox.style.display=`none`;
           submitButton.disabled = true;
           return;
         }
@@ -429,6 +508,7 @@
         // 게임 상태 초기화
         attemptsLeft = 1;
         messageBox.textContent = "";
+        commentBox.textContent = "";
         userInputElement.value = "";
         userInputElement.disabled = false;
         submitButton.disabled = false;
