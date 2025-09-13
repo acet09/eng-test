@@ -73,7 +73,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>영단어 맞추기 게임</h1><span>(25.09.11-update)</span>
+        <h1>영단어 맞추기 게임</h1><span>(25.09.13-update)</span>
       </header>
 
       <!-- 힌트와 상태를 보여주는 부분 -->
@@ -109,10 +109,26 @@
       // 단어와 힌트 목록을 저장하는 배열
       var words = [
         { word: "represent", hint: "대표하다,나타낸다" },
-        { word: "examining", hint: "조사하다, 진찰하다<br> (원인, 본질, 진실 등을 파악 / 학술 연구, 의료 진단, 법률 조사)" },
-        { word: "inspect", hint: "검사하다, 점검하다<br> (체계적인 '점검', '검사' / 안전 점검, 세관 검사)" },
-        { word: "extracting", hint: "적출 ,발췌" },
-        { word: "execution", hint: "실행" },
+        { word: "examine", 
+          hint: "1.조사하다,진찰하다,검토하다",
+          comment: `The police will examine the evidence.<br>
+                    (경찰이 증거를 조사할 것입니다.)`
+        },
+        { word: "inspect", 
+          hint: "1.검사하다,점검하다<br>2.꼼꼼히 살피는 행위",
+          comment: `He carefully inspected the document for any errors.<br>
+                    (그는 오류가 없는지 문서를 꼼꼼히 조사했습니다.)`
+        },
+        { word: "extract", 
+          hint: "1.추출하다,빼내다",
+          comment : `We need to extract valuable information from the data.<br>
+                    우리는 그 데이터에서 가치 있는 정보를 추출해야 합니다.)`
+        },
+        { word: "execute", 
+          hint: "1.실행하다,수행하다<br>2.처형하다",
+          comment: `The command will execute the program.<br>
+                    (그 명령은 프로그램을 실행할 것이다.)`
+        },
         { word: "exist", hint: "존재하다" },
         { word: "include", hint: "포함하다" },
         { word: "supply", hint: "공급하다 - (대량으로 지속적으로 공급하는 것 / 지속적, 물질적, 직접적 제공)" },
@@ -127,7 +143,7 @@
                     (친구에게서 소포를 받았다.)`
         },
         { word: "resolve", 
-          hint: "1.해결하다,결심하다,분별하다<br>2.갈등이나 문제 해결<br>3.목표에 대한 결심,정밀히 분별",
+          hint: "1.해결하다,결심하다,분별하다",
           comment: `We need to resolve this conflict as soon as possible.<br>
                   (우리는 이 갈등을 가능한 한 빨리 해결해야 합니다.)`
         },
@@ -161,7 +177,11 @@
           comment: `The password you entered is invalid.<br>(입력하신 비밀번호가 유효하지 않습니다.)`
         },
         { word: "variable", hint: "1.변수,변하기 쉬운" },
-        { word: "value", hint: "가치" },
+        { word: "value", 
+          hint: "1.가치<br>2.가치를 부여하다",
+          comment: `You should value your time more.<br>
+                    (당신은 당신의 시간을 더 소중히 여겨야 합니다.)`
+        },
         { word: "available", hint: "사용 가능한, 이용할 수 있는" },
         { word: "specify", 
           hint: "1.명시하다<br>2.정확한 정보가 구체적,필수적일 때",
@@ -208,7 +228,11 @@
           comment: `The software allows for concurrent use by multiple users.<br>
                     (이 소프트웨어는 여러 사용자가 동시에 사용할 수 있도록 합니다.)`
         },
-        { word: "through", hint: "~을 통해" },
+        { word: "through", 
+          hint: "1.~을 통하여,~을 겪어서<br>2.~을 지나서,~동안 내내",
+          comment: `I learned English through movies.<br>
+                    (나는 영화를 통해 영어를 배웠다.)`
+        },
         { word: "conversion", hint: "1.전환,변환<br>2.수량이나 형식의 변화" },
         { word: "transformation", 
           hint: "1.변형,변모(결과/과정)<br>2.다른 물질로 만들어 본질적 변함",
@@ -216,7 +240,7 @@
                     (애벌레가 나비로 변태하는 과정은 놀랍습니다.)`
         },
         { word: "define", 
-          hint: "1.정의하다,규정하다<br>2.본질적이고 명확한 답을 제시",
+          hint: "1.정의하다,규정하다<br>2.본질적,명확한 답",
           comment: `The new law defines who can vote.<br>
                     (새로운 법은 누가 투표할 수 있는지 규정합니다.)`
         },
@@ -229,11 +253,31 @@
         { word: "omitted", hint: "생략된" },
         { word: "surrogate", hint: "대리, 감독 대리" },
         { word: "unit", hint: "구성 단위" },
-        { word: "dealing", hint: "취급" },
-        { word: "evaluates", hint: "평가하다, 사정하다, 어림하다; [수학] …의 값을 구하다`  " },
-        { word: "environment", hint: "환경, 주위의 상황" },
-        { word: "indicate", hint: "가리키다, 지적하다, 지시하다" },
-        { word: "efficiency", hint: "효율성" },
+        { word: "deal", 
+          hint: "1.거래하다,분배하다,다루다<br>2.거래,협상", 
+          comment: `Let's make a deal.<br>
+                  (우리 거래를 합시다.)`
+        },
+        { word: "evaluate", 
+          hint: "1.평가하다,감정하다",
+          comment: `We need to evaluate the risks of the project.<br>
+                    (우리는 그 프로젝트의 위험을 평가해야 합니다.)`
+        },
+        { word: "environment", 
+          hint: "1.환경<br>2.주위의 상황,분위기",
+          comment: `A good working environment is important for productivity.<br>
+                    (좋은 업무 환경은 생산성에 중요하다.)`
+        },
+        { word: "indicate", 
+          hint: "1.나타내다,지시하다",
+          comment: `Please indicate your preferred option on the form.<br>
+                    (양식에 당신이 선호하는 선택지를 표시해 주세요.)`
+        },
+        { word: "efficiency", 
+          hint: "1.효율성,효율",
+          comment: `The new engine provides better fuel efficiency.<br>
+                    (새로운 엔진은 더 나은 연료 효율을 제공한다.)`
+        },
         { word: "during", 
           hint: "1.~ 동안 ,~하는 중에<br>2.어떤 특정기간, 진행되는 내내", 
           comment: `The phones were off during the meeting.<br>
@@ -243,9 +287,21 @@
           hint: "1.~까지<br>2.기간의 끝을 명확히",
           comment: `We stayed there until Monday.<br>(우리는 월요일 까지 그곳에 머물렀다.)`
         },
-        { word: "process", hint: "처리 (체계적·단계적으로 처리하다 , 데이터를 처리한다)" },
-        { word: "handle", hint: "처리 (직접 다루다, 대응하다, 문제를 해결하다 ,  &quot문제, 상황, 도구&quot 등을 처리한다) " },
-        { word: "manipulation", hint: "1.교묘한 처리, 솜씨 있는 취급[조종]<br>2.시장 조작, 조작된 가격<br>3.조작, 속임수" },
+        { word: "process", 
+          hint: "1.처리하다,가공하다<br>2.과정,절차",
+          comment: `Learning a language is a slow process.<br>
+                    (언어를 배우는 것은 느린 과정이다.)`
+        },
+        { word: "handle", 
+          hint: "1.손잡이<br>2.다루다,처리하다",
+          comment: `The manager will handle the customer complaint.<br>
+                    (매니저가 고객 불만을 처리할 것이다.)`
+        },
+        { word: "manipulate", 
+          hint: "1.조종하다,다루다<br>2.(속여서)교묘하게 조작한다,",
+          comment: `The news was accused of manipulating public opinion.<br>
+                    (그 뉴스는 대중의 의견을 조작했다는 비난을 받았다.)`
+        },
         { word: "duplicate", 
           hint: "1.중복,복제하다,사본<br>2.원본과 똑같은",
           comment: `I have a duplicate of the original document.<br>
@@ -254,7 +310,7 @@
         { word: "original", hint: "원본, 원조" },
         { word: "currently", hint: "현재, 최근에" },
         { word: "correctly", 
-          hint: "1.옳게,바르게<br>2.과정부터 결과까지 정확하게",
+          hint: "1.옳게,바르게",
           comment: `Please spell my name correctly.<br>
                     (제 이름을 정확하게 철자해 주세요.)`
         },
@@ -273,7 +329,7 @@
         { word: "accept", hint: "수용하다, 받아들이다, 순응하다" },
         { word: "access", hint: "접근" },
         { word: "authentication", 
-          hint: "1.인증,신원확인<br>2.기술,보안,법률등에서 공식적 표현방법",
+          hint: "1.인증,신원확인",
           comment: `The website requires two-factor authentication for extra security.<br> 
                     (이 웹사이트는 추가 보안을 위해 2단계 인증을 요구합니다.)`
         },
@@ -282,22 +338,29 @@
         { word: "saving", hint: "손실로부터 보호하고 잃지 않도록 보존 , 파일로 기록" },
         { word: "occur", hint: "1.<일이> 일어나다, 생기다, 발생하다" },
         { word: "being", hint: "존재, 존재하는, 현재의" },
-        { word: "retrieve", hint: "검색하다, 되찾다', '가져오다', '회수하다', '복구하다', '" },
-        { word: "generate", hint: "생성하다, 만들어내다, 발생시키다" },
-        { word: "declarations", 
-          hint: "1.선언, 발표 2.신고", 
+        { word: "retrieve", 
+          hint: "1.되찾다,회수하다,복구하다",
+          comment:  ``
+        },
+        { word: "generate", 
+          hint: "1.생성하다,만들어내다,발생시키다",
+          comment: `Good ideas don't just happen; you have to work to generate them.<br>
+                    (좋은 아이디어는 그냥 생기는 것이 아니라, 그것을 만들어내기 위해 노력해야 한다.)`
+        },
+        { word: "declare", 
+          hint: "1.선언하다,발표하다<br>2.신고하다", 
           comment :`You must make a declaration before using a variable.<br>
-          (변수를 사용하기 전에 선언을 해야 한다.)` 
+                    (변수를 사용하기 전에 선언을 해야 한다.)` 
         },
         { word: "certain", 
-          hint: "1.확실한,틀림없는(확신을 나타내는 상태)<br>2.어떤,특정한(이름을 밝히지 않는,모호한)",
+          hint: "1.확실한,틀림없는(확신을 나타내는 상태)",
           comment: `A certain person told me the news.<br>
-                  (어떤 사람이 나에게 그 소식을 전해줬어.)`
+                    (어떤 사람이 나에게 그 소식을 전해줬어.)`
         },
         { word: "ensure", 
-          hint: "1.확실히 하다,보장하다<br>2.책임감이 강조된,보장하기 위한 행위",
+          hint: "1.확실히 하다,책임지고 보장하다",
           comment: `We must ensure the safety of our customers<br>
-                  (우리는 고객들의 안전을 보장해야 합니다.)`
+                    (우리는 고객들의 안전을 보장해야 합니다.)`
         },
         { word: "avoid", hint: "피하다, 기피, 무효" },
         { word: "modify", hint: "수정하다" },
@@ -305,7 +368,7 @@
         { word: "identify", 
           hint: "1.식별/확인하다,동일시하다<br>2.그 정체를 파악하는 행위",
           comment: `Can you identify the man in the photo?<br>
-                  (사진 속 남자를 식별할 수 있나요?)`
+                    (사진 속 남자를 식별할 수 있나요?)`
         },
         { word: "configuration", hint: "구성, 형상, 지형, 윤곽" },
         { word: "creation", 
@@ -318,7 +381,11 @@
           comment: `You must install all the project's dependencies first.<br>
                     (프로젝트의 모든 의존성들을 먼저 설치해야 합니다.)` 
         },
-        { word: "structure", hint: "1.구조, 기구, 조직, 구성, 조립<br>2.건물, 건조물<br>3.<생각·계획 등을> 구성하다, 조직화하다" },
+        { word: "structure", 
+          hint: "1.구조,구성,체계<br>2.<생각·계획 등을>구성하다,조직화하다",
+          comment: `The building's structure is very strong.<br>
+                    (그 건물의 구조는 매우 튼튼합니다.)`
+        },
         { word: "validation", hint: "유효성, 확인, 유효성검사" },
         { word: "illegal", hint: "불법" },
         { word: "computation", 
@@ -327,24 +394,24 @@
                     (컴퓨터는 매 초 수백만 개의 계산을 수행합니다.)`
         },
         { word: "mechanism", 
-          hint: "1.기계 장치<br>2.구체적 원리, 작동방식/체계<br>3.어떻게 작동하는지 과학적 논리적", 
+          hint: "1.기계 장치<br>2.구체적 원리, 작동방식/체계", 
           comment: `The human body has a complex healing mechanism.<br>
                     (인체는 복잡한 치유 메커니즘을 가지고 있습니다.)`
         },
         { word: "efficient", hint: "효율적인, 효과가 있는" },
         { word: "unexpected", hint: "예기치 않은" },
         { word: "same time", 
-          hint: "1.동시에,함께<br>2.그럼에도 불구하고,한편으로는",
+          hint: "1.같이,동시에,한편으로는",
           comment: `The job is demanding, but at the same time, it is very rewarding.<br>
-                  (그 일은 힘들지만, 동시에 매우 보람이 있다.)`
+                    (그 일은 힘들지만, 동시에 매우 보람이 있다.)`
         },
         { word: "can be", 
-          hint: "1.~일 수 있다,~할 수 있다<br>2.가능성이 있다",
-          commentt: `The weather can be unpredictable in the mountains.<br>
+          hint: "1.~일 수 있다,~할 수 있다",
+          comment: `The weather can be unpredictable in the mountains.<br>
                     (산에서는 날씨가 예측 불가능할 수 있습니다.)`
         },
         { word: "to be", 
-          hint: "1.~되는 것, ~되기 위해<br>2.미래지향적인 목표,목적,가능성", 
+          hint: "1.~되는 것, ~되기 위해", 
           comment: "Her goal is to be happy.<br>(그녀의 목표는 행복하게 되는 것이다.)" 
         },
         { word: "associate", hint: "연상하다, 관련시켜 생각하다, 연결하다" },
@@ -353,29 +420,29 @@
         { word: "clear", hint: "명확한 ,맑은, 투명한" },
         { word: "might", hint: "1.may의 과거형<br>2.~해도 좋다<br>3.~할지도 모른다" },
         { word: "termination", 
-          hint: "1.종료,마감<br>2.돌이킬 수 없는 최종적인 끝",
+          hint: "1.종료,마감<br>2.최종적인 끝",
           comment: `We have received your request for service termination<br>
                     (서비스 종료 요청을 접수했습니다.)`
         },
         { word: "increment", 
-          hint: "1.증가<br>2.정해진 양만큼 점진적으로 늘어난", 
+          hint: "1.증가<br>2.정해진 양만큼 점진적 증가", 
           comment: `The program will increment the counter by one.<br>
                     (그 프로그램은 카운터의 값을 1씩 증가시킬 것입니다.)`
         },
         { word: "decrement", 
-          hint: "1.감소<br>2.정해진 값만큼 줄일 때",
+          hint: "1.감소<br>2.정해진 값만큼 줄임",
           comment: `We need to decrement the counter by one<br>
                     (카운터를 1씩 줄여야 합니다.)`
         },
         { word: "reduce", hint: "줄이다" },
         { word: "subtract", 
-          hint: "1.빼다,공제하다<br>2.주로 계산에 사용",
+          hint: "1.빼다,공제하다",
           comment : `We need to subtract the expenses from the revenue.<br> 
                     (우리는 수입에서 비용을 빼야 한다.)`
         },
         { word: "contain", hint: "담고 있다, 포함하다" },
         { word: "condition", 
-          hint: "1.현 &quot상태&quot 나타내거나<br>2.무언가 가능해지기 위해 필요한 &quot조건&quot",
+          hint: "1.현재 상태,필요 조건",
           comment: `We will go on a picnic, on the condition that it doesn't rain.<br>
                     (비가 오지 않는다는 조건하에 우리는 소풍을 갈 것입니다.)` 
         },
@@ -388,7 +455,7 @@
         { word: "cryptographic", 
           hint: "1.암호화,암호기술",
           comment: `A cryptographic key is essential for decryption.<br>
-                  (암호 키는 복호화를 위해 필수적입니다.)`
+                    (암호 키는 복호화를 위해 필수적입니다.)`
         },
         { word: "exemption", hint: "면제" },
         { word: "particular", hint: "특정한, 개별적인, 까다로운(사무적 - &quot객관적&quot, 구체적, 개별적)" },
@@ -397,7 +464,11 @@
         { word: "elapsed Time", hint: "경과 시간" },
         { word: "transient", hint: "1.덧없는, 무상한, 일시적인 사물<br>2.일시의, 순간적인, 깜짝할 사이의" },
         { word: "expressions", hint: "표현" },
-        { word: "expansion", hint: "확장" },
+        { word: "expansion", 
+          hint: "1.확장,팽창<br>2.규모나 범위가 커짐>",
+          comment: `The company's expansion created new job opportunities.<br>
+                    (그 회사의 확장은 새로운 일자리를 창출했습니다.)`
+        },
         { word: "readability", hint: "가독성" },
         { word: "typical", hint: "전형적인 / 어떤 특정유형을 대표하는 한 가지 예시" },
         { word: "general", hint: "일반적 / 모두에게 해당되는 보편적인 사실" },
@@ -410,18 +481,22 @@
         { word: "loop", hint: "반복,고리" },
         { word: "infinite", hint: "무한한" },
         { word: "related", 
-          hint: "1.~와 관련된,~와 연관된,친족<br>2.공통주제,원인,배경 등을 공유",
+          hint: "1.~와 관련된,~와 연관된,친족",
           comment: `Are you guys related?<br>
                     (당신들 가족 관계이신가요?)`
         },
         { word: "relate", 
-          hint: "1.관련시키다,연관짓다,공감하다<br>2.서로 다른것들을 연결해 의미부여",
+          hint: "1.관련시키다,연관짓다,공감하다",
           comment: `The speaker tried to relate the theory to real life.<br>
                     (연사는 그 이론을 현실과 연관시키려고 했습니다.)`
         },
-        { word: "will cause", hint: "~의 원인이 될 것이다" },
+        { word: "will cause", 
+          hint: "1.~의 원인이 될 것이다",
+          comment: `This decision will cause a change in the plan.<br>
+                    (이 결정은 계획에 변화를 일으킬 것입니다.)`
+        },
         { word: "cause", 
-          hint: "1.원인,이유<br>2.야기하다,초래하다", 
+          hint: "1.원인,이유", 
           comment: `Smoking can cause serious health problems.<br> 
                     (흡연은 심각한 건강 문제를 야기할 수 있습니다.)`
         },
@@ -437,65 +512,100 @@
                     (사막에서는 비가 자주 내리지 않습니다.)`
         },
         { word: "each other", hint: "각각 (상대와 상호작용)" },
-        { word: "performance", hint: "수행, 달성, 실적" },
-        { word: "performs", 
+        { word: "performance", 
+          hint: "1.성능,실적,공연",
+          comment: `The company's performance has improved this quarter.<br>
+                    (회사의 실적이 이번 분기에 향상되었다.)`
+        },
+        { word: "perform",   
           hint: "1.수행하다,공연하다",
-          comment: `The doctor performs the surgery.<br>(의사가 수술을 수행합니다.)`
+          comment: `The doctor performs the surgery.<br>
+                    (의사가 수술을 수행합니다.)`
         },
         { word: "with out", 
           hint: "1.~이 없이,~을 가지지 않고",
-          comment: `You can get this job without any experience.<br>(경험 없이도 이 직업을 얻을 수 있습니다.)`
+          comment: `You can get this job without any experience.<br>
+                    (경험 없이도 이 직업을 얻을 수 있습니다.)`
         },
-        { word: "either", hint: "어느 하나" },
+        { word: "either", 
+          hint: "1.둘 중 어느 하나,(단독)둘 중 어느 쪽이든",
+          comment: `Either option will be fine with me.<br>
+                    (어느 선택지든 저에게는 괜찮습니다.)`
+        },
         { word: "purpose", 
           hint: "1.목적,용도<br>2.계획성,진지한",
           comment: `The tool serves a dual purpose: it's a wrench and a hammer.<br> 
                     (이 도구는 두 가지 용도를 가지고 있습니다: 렌치이자 망치입니다.)`
         },
-        { word: "Priority", hint: "우선 순위" },
+        { word: "priority", 
+          hint: "1.우선순위,우선권",
+          comment: `You need to set your priorities for the day.<br>
+                    (당신은 오늘 해야 할 일들의 우선순위를 정해야 합니다.)`
+        },
         { word: "flexible", 
-          hint: "1.유연한,융통성 있는<br>2.경직되지 않고 탄력적",
+          hint: "1.유연한,융통성 있는",
           comment: `My schedule is flexible, so I can meet you anytime.<br>
                     (제 일정은 융통성이 있어서, 아무 때나 만날 수 있어요.)`
         },
         { word: "allows", 
-          hint: "1.허락하다,가능하게 하다<br>2.(누군가에게)허락하거나 권한을 줌",
+          hint: "1.허락하다,가능하게 하다",
           comment: `This ticket allows one person to enter the museum.<br>
-                  (이 티켓은 한 사람이 박물관에 입장하는 것을 허용합니다.)`
+                    (이 티켓은 한 사람이 박물관에 입장하는 것을 허용합니다.)`
         },
         { word: "allows for", 
-          hint: "1.~을 가능하게 한다,~에 대비하다.<br>2.(특정 결과나 가능성을)염두에 두고 수용할 수 있게 함",
+          hint: "1.~을 가능하게 한다,~에 대비하다.",
           comment: `This design allows for greater flexibility.<br>
-                  (이 디자인은 더 큰 유연성을 가능하게 합니다.)`
+                    (이 디자인은 더 큰 유연성을 가능하게 합니다.)`
         },
-        { word: "influences", hint: "영향" },
+        { word: "influence", 
+          hint: "1.영향,영향력,영향을 주다",
+          comment: `Social media can influence public opinion.<br>
+                    (소셜 미디어는 대중의 의견에 영향을 줄 수 있습니다.)`
+        },
         { word: "maintainable", 
           hint: "1.유지,관리가 용이한<br>2.장기관리,효율적,긍정적" , 
           comment: `The code is easy to read and maintainable.<br>
                     (이 코드는 읽기 쉽고 유지보수가 용이하다.)` 
           },
-        { word: "scalable", hint: "확장 가능한" },
+        { word: "scalable", 
+          hint: "1.확장 가능한,확장성 있는",
+          comment: `Our new software is highly scalable.<br>
+                    (우리 새로운 소프트웨어는 확장성이 매우 높다.)`
+        },
         { word: "crucial", 
           hint: "1.결정적인, 중대한<br>2.성패를 좌우(cross)할 만큼", 
           comment: `The final exam is a crucial part of your grade.<br>
                     (기말고사는 당신의 성적에서 매우 중요한 부분입니다.)`
         },
-        { word: "decisive", hint: "1.<문제·논쟁 등이> 결정적인, 중대한<br>2.<성격 등이> 단호한, 과단성 있는<br>3.<차이가> 명확한" },
-        { word: "way to", hint: "~하는 방법" },
-        { word: "declare", hint: "1.공식적으로 밝히다, 선언하다" },
+        { word: "decisive", 
+          hint: "1.결정적인,단호한,결단력 있는",
+          comment: `This victory was a decisive moment in the war.<br>
+                    (이 승리는 전쟁에서 결정적인 순간이었다.)`
+        },
+        { word: "way to", 
+          hint: "1.~하는 방법",
+          comment: `That's the only way to solve the problem.<br>
+                    (그것이 그 문제를 해결할 수 있는 유일한 방법이야.)`
+        },
+        { word: "declare", 
+          hint: "1.(공식적으로)선언하다,공표하다",
+          comment: `You must declare all goods at customs.<br>
+                    (세관에 모든 물품을 신고해야 합니다.)`
+        },
         { word: "grant", 
-          hint: "1.(요청을)허가하다,승인하다<br>2.(권리, 돈 등을)수여하다,주다<br>3.보조금",
+          hint: "1.승인하다,수여하다<br>2.보조금,장학금",
           comment: `They granted us permission to build a new library.<br>
-                  (그들은 우리가 새로운 도서관을 짓도록 허락해 주었습니다.)`
+                    (그들은 우리가 새로운 도서관을 짓도록 허락해 주었습니다.)`
         },
         { word: "complex", 
           hint: "1.복잡한<br>2.이해하거나 해결하기 어려운 상태",
           comment: `This is a very complex issue with no easy solution.<br>
-                  (이것은 쉬운 해결책이 없는 매우 복잡한 문제입니다.)`
+                    (이것은 쉬운 해결책이 없는 매우 복잡한 문제입니다.)`
         },
         { word: "modern", 
           hint: "1.현대의, 근대의, 진보적<br>2.19세기 말~20세기 초<br>3.새로운 방식,사상,양식",
-          comment: `She prefers modern art to classical art.<br>(그녀는 고전 미술보다 현대 미술을 선호한다.)`
+          comment: `She prefers modern art to classical art.<br>
+                    (그녀는 고전 미술보다 현대 미술을 선호한다.)`
         },
         { word: "upcoming", 
           hint: "1.다가오는,곧 있을<br>2.곧 미래에 예정된<br>3.행사,일정,출시",
@@ -505,23 +615,34 @@
         { word: "incoming", 
           hint: "1.들어오는,도착하는<br>2.밖에서 안(현재시점)으로 향하는 움직임,흐름",
           comment: `We have a lot of incoming emails to deal with.<br>
-                  (우리는 처리해야 할 들어오는 이메일이 많이 있습니다.)`
+                    (우리는 처리해야 할 들어오는 이메일이 많이 있습니다.)`
         },
-        { word: "infections", hint: "감염" },
-        { word: "fuel", hint: "연료" },
         { word: "Suggest", 
-          hint: "1.제안하다<br>2.암시하다,시사하다<br>3.부드러운 어감",
-          comment: `I suggest we go to a movie tonight.<br>(오늘 밤에 영화 보러 가는 것을 제안해요.)`
+          hint: "1.(부드러운)제안하다,시사하다",
+          comment: `I suggest we go to a movie tonight.<br>
+                    (오늘 밤에 영화 보러 가는 것을 제안해요.)`
         },
-        { word: "Propose", hint: "제안하다 (형식적, 신중한, 오랜 시간 준비한)" },
+        { word: "Propose", 
+          hint: "1.제안하다(형식적,신중한,오랜 시간 준비한)<br>2.청혼하다",
+          comment: `I'd like to propose a toast to the happy couple.<br>
+                    (행복한 신랑 신부에게 건배를 제의하고 싶습니다.)`
+        },
         { word: "offer", hint: "제공하다 (선택할 수 있도록 제안하는 것)" },
         { word: "potential", 
           hint: "1.가능성, 잠재적",
           comment: `This plan has the potential to solve the problem.<br>
                     (이 계획은 그 문제를 해결할 가능성이 있습니다.)` 
         },
-        { word: "forget", hint: "잊다, 망각하다" },
-        { word: "cache", hint: "은닉처, 저장소" ,comment :``},
+        { word: "forget", 
+          hint: "1.잊다, 망각하다",
+          comment: `forget me<br>
+                    (날 잊어줘)`
+        },
+        { word: "cache", 
+          hint: "1..은닉처,저장소<br>2.빠른 데이터 접근을 위한 임시공간",
+          comment :`Your browser's cache stores frequently visited web pages.<br>
+                    (당신의 브라우저 캐시는 자주 방문하는 웹페이지를 저장합니다.)`
+        },
         { word: "dependency", 
           hint: "1.하나의 의존성<br>2.특정대상에 의존하는 관계" ,
           comment: `The app has a dependency on a database.<br>
@@ -535,18 +656,28 @@
         { word: "unary", 
           hint: "1.하나의,단일요소<br>2.단항 연산자", 
           comment: `The plus sign in +5 is a unary operator.<br>
-                    (+5의 '+'기호는 단항 연산자이다)` },
+                    (+5의 '+'기호는 단항 연산자이다)` 
+        },
         { word: "essential", 
           hint: "1.필수적인,극히 중요한<br>2.본질적인<br>3.없어서는 안 될 만큼 중요한 것", 
           comment: `Hard work is an essential part of success.<br>
-                  (노력은 성공의 필수적인 부분입니다.)` },
+                    (노력은 성공의 필수적인 부분입니다.)` 
+        },
         { word: "identity", 
           hint: "1.정체성,신원", 
           comment: `The police checked the man's identity.<br>
-                  (경찰은 그 남자의 신원을 확인했습니다.)` 
+                    (경찰은 그 남자의 신원을 확인했습니다.)` 
         },
-        // { word: "", hint: "", comment: `` },
-        // { word: "", hint: "", comment: `` },
+        { word: "frequent", 
+          hint: "1.빈번한,자주 일어나는", 
+          comment: `Errors occur frequently in this program.<br>
+                    (이 프로그램에서는 오류가 자주 발생한다.)` 
+        },
+        { word: "frequency", 
+          hint: "1.빈도,주파수", 
+          comment: `Radio waves have different frequencies.<br>
+                    (라디오파는 서로 다른 주파수를 가진다.)` 
+        },
         // { word: "", hint: "", comment: `` },
       ];
 
