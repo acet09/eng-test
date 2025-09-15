@@ -68,12 +68,18 @@
       #com_mss{
         color : gray;
       }
+
+      .gradation{
+        background: linear-gradient(to right, red, #ff8000);
+        color:transparent;
+        -webkit-background-clip: text;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>영단어 맞추기 게임</h1><span>(25.09.14-update)</span>
+        <h1>영단어 맞추기 게임</h1><span class="gradation">(25.09.15-update)</span>
       </header>
 
       <!-- 힌트와 상태를 보여주는 부분 -->
@@ -110,12 +116,12 @@
       var words = [
         { word: "represent", hint: "대표하다,나타낸다" },
         { word: "examine", 
-          hint: "1.조사하다,진찰하다,검토하다",
+          hint: "1.조사하다,진찰하다,검토하다<br>2.본질적인 상태,원인을 들여다보는",
           comment: `The police will examine the evidence.<br>
                     (경찰이 증거를 조사할 것입니다.)`
         },
         { word: "inspect", 
-          hint: "1.검사하다,점검하다<br>2.꼼꼼히 살피는 행위",
+          hint: "1.검사하다,점검하다<br>2.제품에 하자나 결함이 없는지 확인",
           comment: `He carefully inspected the document for any errors.<br>
                     (그는 오류가 없는지 문서를 꼼꼼히 조사했습니다.)`
         },
@@ -134,9 +140,8 @@
           comment: `I think, therefore I exist. (Cogito, ergo sum.)<br>
                     (나는 생각한다, 그러므로 나는 존재한다.)`
         },
-        { word: "include", hint: "포함하다" },
         { word: "supply", 
-          hint: "1.공급하다<br>2.지속적,물질적 자원 제공)",
+          hint: "1.공급하다<br>2.지속적,물질적 자원 제공",
           comment: `The company supplies fresh water to the entire city.<br>
                     (그 회사는 도시 전체에 신선한 물을 공급한다.)`
         },
@@ -155,6 +160,11 @@
           comment: `We need to resolve this conflict as soon as possible.<br>
                     (우리는 이 갈등을 가능한 한 빨리 해결해야 합니다.)`
         },
+        { word: "serialize", 
+          hint: "1.직렬화하다,연속적으로 만들다.",
+          comment: `You need to serialize the object before saving it to a file.<br>
+                    (파일에 저장하기 전에 객체를 직렬화해야 합니다.)`
+        },
         { word: "serialization", 
           hint: "1.직렬화<br>2.Object,Data를 바이트 스트림 형태로 변환하는 포맷 기술",
           comment: `Serialization is the process of converting an object into a stream of bytes.<br>
@@ -165,8 +175,8 @@
           comment: `It initializes the game with a new score of zero.<br>
                     (이 함수는 게임을 점수 0으로 초기화했어요.)`
         },
-        { word: "synchronized", 
-          hint: "1.동기화",
+        { word: "synchronize", 
+          hint: "1.동시에 발생하다,동기화하다",
           comment: `My phone calendar is synchronized with my computer.<br>
                     (내 휴대폰 캘린더는 컴퓨터와 동기화되어 있다.)`
         },
@@ -180,7 +190,11 @@
           comment: `The company's response to the crisis was very quick.<br>
                     (그 회사의 위기 대응은 매우 신속했다.)`
         },
-        { word: "require", hint: "요구하다, 필요하다 (무엇이 필요하거나 요구됨)" },
+        { word: "require", 
+          hint: "1.필요하다,요구하다<br>2.반드시 필요하거나,강제적 요구 상황",
+          comment: `Admission to the university requires a high GPA.<br>
+                    (그 대학에 입학하려면 높은 학점이 필요합니다.)`
+        },
         { word: "acquire", 
           hint: "1.취득하다,획득하다,배우다",
           comment: `He has managed to acquire a good understanding of the subject.<br>
@@ -236,25 +250,45 @@
                     (그의 경험은 석사 학위에 상응합니다.)`
         },
         { word: "Unless otherwise noted", 
-          hint: "달리 명시되지 않은",
+          hint: "1.달리 명시되지 않은",
           comment: `The store is open from 9 AM to 6 PM daily, unless otherwise noted.<br>
                     (다른 언급이 없는 한, 가게는 매일 오전 9시부터 오후 6시까지 문을 엽니다.)`
         },
-        { word: "such as", hint: "예를들어, ~와 같은" },
-        { word: "same", hint: "물리적/본질적으로 동일한<br>1.같은<br>2.똑같은, 동일한" },
+        { word: "such as", 
+          hint: "1.예를들어,~ 같은",
+          comment: `I enjoy different kinds of fruits, such as apples, bananas, and oranges.<br>
+                    (나는 사과, 바나나, 오렌지 같은 다양한 종류의 과일을 좋아합니다.)`
+        },
+        { word: "same", 
+          hint: "1.동일한<br>2.구분할 필요 없을만큼 똑같음",
+          comment: `He said the same thing as you did.<br>
+                    (그는 네가 말한 것과 똑같은 것을 말했어.)`
+        },
         { word: "equal", 
           hint: "1.완전히 같은,동등한<br>2.수량,크기,가치",
           comment: `All people are equal under the law.<br>
                     (모든 사람은 법 앞에서 평등하다.)`
         },
-        { word: "compare", hint: "유사점과 차이점을 살피는 행위<br>1.비교하다,견주다" },
-        { word: "different", hint: "서로 다른, 별개의, 색다른, 독특한" },
+        { word: "compare", 
+          hint: "1.비교하다,견주다<br>2.공통점,차이점을 살피는 행위",
+          comment: `Let's compare the prices of the two cameras.<br>
+                    (두 카메라의 가격을 비교해 봅시다.)`
+        },
+        { word: "different", 
+          hint: "1.서로 다른,다양한,독특한<br>2.서로 다름을 명확히 함",
+          comment: `My new phone is very different from my old one.<br>
+                    (내 새 휴대폰은 예전 것과 매우 다릅니다.)`
+        },
         { word: "sequence", 
           hint: "1.연속,순서,차례<br>2.어떤 규칙,논리<br>3.연속적 일련의 과정",
           comment: `A DNA sequence contains genetic information.<br>
                     (DNA 서열은 유전 정보를 담고 있습니다.)`
         },
-        { word: "based", hint: "기반을 둔,기본, 바탕" },
+        { word: "base", 
+          hint: "1.기초,기반을 두다,근거를 두다",
+          comment: `This movie is based on a true story.<br>
+                    (이 영화는 실화를 바탕으로 합니다.)`
+        },
         { word: "concurrent", 
           hint: "1.동시에 발생하는,병행하는<br>2.전문적이고 공식적인(기술,과학,법률)",
           comment: `The software allows for concurrent use by multiple users.<br>
@@ -332,8 +366,8 @@
                     (회의 동안 전화기들은 꺼져 있었습니다.)` 
         },
         { word: "until", 
-          hint: "1.~까지<br>2.기간의 끝을 명확히",
-          comment: `We stayed there until Monday.<br>(우리는 월요일 까지 그곳에 머물렀다.)`
+          hint: "1.~이 되기까지<br>2.~이 되어서야 비로소",
+          comment: `We stayed there until Monday.<br>(우리는 월요일이 되기 까지 그곳에 머물렀다.)`
         },
         { word: "process", 
           hint: "1.처리하다,진행하다<br>2.과정,절차",
@@ -355,7 +389,6 @@
           comment: `I have a duplicate of the original document.<br>
                     (원본 서류의 사본을 가지고 있습니다.)`
         },
-        { word: "original", hint: "원본, 원조" },
         { word: "currently", 
           hint: "1.현재,최근에",
           comment: `He is currently working as a freelance designer.<br>
@@ -479,8 +512,13 @@
           comment: `She found an efficient way to study for the exam.<br>
                     (그녀는 시험공부를 할 효율적인 방법을 찾았다.)`
         },
+        { word: "expect", 
+          hint: "1.예상하다,기대하다,바라다",
+          comment: `I expect him to arrive on time.<br>
+                    (나는 그가 제시간에 도착할 거라고 예상합니다.)`
+        },
         { word: "unexpected", 
-          hint: "1.예기치 않은,뜻밖의",
+          hint: "1.예상치 못한,뜻밖의",
           comment: `The team's victory was completely unexpected.<br>
                     (그 팀의 승리는 완전히 예상치 못한 것이었다.)`
         },
@@ -501,7 +539,11 @@
         { word: "associate", hint: "연상하다, 관련시켜 생각하다, 연결하다" },
         { word: "criteria", hint: "기준" },
         { word: "absence", hint: "부재, 결석" },
-        { word: "clear", hint: "명확한 ,맑은, 투명한" },
+        { word: "clear", 
+          hint: "1.명확한,맑은,투명한",
+          comment: `The sky is crystal clear after the rain.<br>
+                    (비 온 뒤의 하늘은 구름 한 점 없이 맑다)`
+        },
         { word: "might", hint: "1.may의 과거형<br>2.~해도 좋다<br>3.~할지도 모른다" },
         { word: "termination", 
           hint: "1.종료,마감<br>2.최종적인 끝",
@@ -518,13 +560,31 @@
           comment: `We need to decrement the counter by one<br>
                     (카운터를 1씩 줄여야 합니다.)`
         },
-        { word: "reduce", hint: "줄이다" },
+        { word: "reduce", 
+          hint: "1.줄이다",
+          comment: `The company decided to reduce its costs.<br>
+                    (회사는 비용을 줄이기로 결정했습니다.)`
+        },
         { word: "subtract", 
           hint: "1.빼다,공제하다",
           comment : `We need to subtract the expenses from the revenue.<br> 
                     (우리는 수입에서 비용을 빼야 한다.)`
         },
-        { word: "contain", hint: "담고 있다, 포함하다" },
+        { word: "contain", 
+          hint: "1.포함하다,억누르다<br>2.물리적 공간,감정적 억누름",
+          comment: `The document contains important information.<br>
+                    (그 문서에는 중요한 정보가 포함되어 있습니다.)`
+        },
+        { word: "include", 
+          hint: "1.포함하다<br>2.범위 안에 특정 대상이 속하도록",
+          comment: `The total price includes tax and service charge.<br>
+                    (총 가격에 세금과 봉사료가 포함되어 있습니다.)`
+        },
+        { word: "import", 
+          hint: "1.도입하다,수입하다",
+          comment: `You need to import the 'math' library to use this function.<br>
+                    (이 함수를 사용하려면 'math' 라이브러리를 가져와야 합니다.)`
+        },
         { word: "condition", 
           hint: "1.현재 상태,필요 조건",
           comment: `We will go on a picnic, on the condition that it doesn't rain.<br>
@@ -551,6 +611,21 @@
                     (암호 키는 복호화를 위해 필수적입니다.)`
         },
         { word: "exemption", hint: "면제" },
+        { word: "original", 
+          hint: "1.원본,최초의,독창적",
+          comment: `You need to submit the original document, not a copy.<br>
+                    (사본이 아니라 원본 서류를 제출해야 합니다.)`
+        },
+        { word: "typical", 
+          hint: "1.전형적인<br>2.특정유형의 대표적인 예시",
+          comment: `This weather is typical for September in Seoul.<br>
+                    (이런 날씨는 서울에서 9월에 흔히 볼 수 있습니다.)`
+        },
+        { word: "general", 
+          hint: "1.일반적<br>2.모두에게 해당되는 보편적인 사실",
+          comment: `The weather in September is generally mild in Seoul.<br>
+                    (서울의 9월 날씨는 대체로 온화합니다.)`
+        },
         { word: "particular", 
           hint: "특정한,개별적인,까다로운(부정적)",
           comment: `She's very particular about her coffee.<br>
@@ -563,16 +638,22 @@
         },
         { word: "with a", hint: "~을 사용해서" },
         { word: "elapsed Time", hint: "경과 시간" },
-        { word: "transient", hint: "1.덧없는, 무상한, 일시적인 사물<br>2.일시의, 순간적인, 깜짝할 사이의" },
-        { word: "expressions", hint: "표현" },
+        { word: "transient", 
+          hint: "1.일시적인",
+          comment: `The circuit produced a transient voltage spike.<br>
+                    (회로에서 순간적인 전압 스파이크가 발생했습니다.)`
+        },
+        { word: "expressions", 
+          hint: "1.표현,식<br>2.생각이나 감정,수학적 값,연산",
+          comment: `This expression calculates the total cost.<br>
+                    (이 식은 총 비용을 계산합니다.)`
+        },
         { word: "expansion", 
-          hint: "1.확장,팽창<br>2.규모나 범위가 커짐>",
+          hint: "1.확장,팽창<br>2.규모나 범위가 커짐",
           comment: `The company's expansion created new job opportunities.<br>
                     (그 회사의 확장은 새로운 일자리를 창출했습니다.)`
         },
         { word: "readability", hint: "가독성" },
-        { word: "typical", hint: "전형적인 / 어떤 특정유형을 대표하는 한 가지 예시" },
-        { word: "general", hint: "일반적 / 모두에게 해당되는 보편적인 사실" },
         { word: "hierarchy", hint: "계층, 계급" },
         { word: "root", 
           hint: "1.(식물의)뿌리,근원,근본",
