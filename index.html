@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>단어 맞추기 게임 ver.2</title>
     <style>
-  
       body {
         font-family: sans-serif;
         background-color: #f4f4f4;
@@ -15,6 +14,9 @@
         min-height: 100vh;
         margin: 0;
         padding: 20px;
+        background-image: url(https://plus.unsplash.com/premium_vector-1756941235477-98dff9156376?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-repeat: no-repeat;
+        background-size: cover;
       }
       .container {
         width: 100%;
@@ -69,6 +71,7 @@
       #com_mss{
         color : gray;
         text-align: left;
+        white-space: nowrap;
       }
       #com_mss ol{
         text-align: left;
@@ -87,12 +90,39 @@
         color:transparent;
         -webkit-background-clip: text;
       }
+      .hint-title {
+        display: block;
+        width: 85%;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        border: 0.1rem solid #ccc;
+        margin: 1.2rem auto;
+        border-radius: 0.3rem;
+        padding: 0.5rem 1rem;
+        background: #fff;
+        transition: color 0.2s;
+      }
+
+      .hint-title:hover {
+        color:#fff;
+        background: linear-gradient(to right, red, #ff8000);
+        border: 0.1rem solid #fff;
+      }
+
+      .accordion-panel {
+        overflow: hidden;
+        max-height: 0; 
+        transition: max-height 0.2s ease-out; 
+      }
+
     </style>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>영단어 맞추기 게임</h1><span class="gradation">(25.09.16-update)</span>
+        <h1>영단어 맞추기 게임</h1><span class="gradation">(25.09.18-update)</span>
       </header>
 
       <!-- 힌트와 상태를 보여주는 부분 -->
@@ -958,10 +988,12 @@
       const newGameButton = document.getElementById("newGameButton");
       const messageBox = document.getElementById("messageBox");
       const commentBox = document.getElementById("com_mss");  
-
+      
       // 해설 HTML 동적으로 생성하는 함수
       function generateCommentHTML(commentData){
-        let htmlString = `<ol>`;
+        let htmlString = `<button class="hint-title">간단영문장</button>` 
+        htmlString += `<div class="accordion-panel">`;
+        htmlString += `<ol>`;
         commentData.parts.forEach((part) => {
           htmlString += `
             <li>
@@ -972,8 +1004,27 @@
           `;
         });    
         htmlString += `</ol>`;  
+        htmlString += `</div>`;  
         return htmlString;
       }
+
+      // 아코디언 패널 transition
+      commentBox.addEventListener('click', function(event) {
+        const target = event.target;
+        // 클릭된 요소가 hint-title 클래스를 가지고 있는지 확인
+        if (target.classList.contains('hint-title')) {
+            target.classList.toggle('active'); // active 클래스 토글
+            const panel = target.nextElementSibling; // 바로 다음 형제 요소(패널)를 찾음
+        
+            if (panel.style.maxHeight) {
+                // 패널이 열려 있으면 닫기
+                panel.style.maxHeight = null;
+            } else {
+                // 패널이 닫혀 있으면 열기 (스크롤 높이만큼 설정)
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        }
+      });
 
       // '제출' 버튼 클릭 시 실행될 함수
       function checkGuess() {
