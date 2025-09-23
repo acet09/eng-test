@@ -17,6 +17,7 @@
         background-image: url(https://plus.unsplash.com/premium_vector-1756941235477-98dff9156376?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
         background-repeat: no-repeat;
         background-size: cover;
+        flex-wrap: wrap;
       }
       .container {
         width: 100%;
@@ -116,7 +117,14 @@
         max-height: 0; 
         transition: max-height 0.2s ease-out; 
       }
-
+      footer{
+        width: 100%;
+        max-width: 500px;
+        font-size: 13px;
+        color: gray;
+        text-align: center;
+        padding-top: 70px;
+      }
     </style>
   </head>
   <body>
@@ -151,8 +159,10 @@
       <div id="commentBox">
         <div id="com_mss"></div>
       </div>
+      <footer>
+        <span>last update - 25.09.23</span>
+      </footer>
     </div>
-
     <script>
       // 단어와 힌트 목록을 저장하는 배열
       const words = [
@@ -249,9 +259,6 @@
               },              
             ]
           }
-
-          // comment: `This law provides protection for wildlife.<br>
-          //           (이 법은 야생 동물에게 보호를 제공합니다.)`
         },
         { word: "receive", 
           hint: "1.받다,수취하다<br>2.사람을 맞이하거나<br>3.정보,경험을 얻을 때",
@@ -288,8 +295,16 @@
         },
         { word: "serialization", 
           hint: "1.직렬화<br>2.Object,Data를 바이트 스트림 형태로 변환하는 포맷 기술",
-          comment: `Serialization is the process of converting an object into a stream of bytes.<br>
-                    (직렬화는 객체를 바이트 스트림으로 변환하는 과정입니다.)`
+          comment: {
+            title: "serialization",
+            parts: [
+              {
+                type: "명사 (serialization)",
+                example: "Serialization is the process of converting an object into a stream of bytes.",
+                translation: "(직렬화는 객체를 바이트 스트림으로 변환하는 과정입니다.)",
+              },              
+            ]
+          }
         },
         { word: "initialize", 
           hint: "1.초기화화다,초기설정",
@@ -307,9 +322,22 @@
                     (저는 내일까지 서류를 보내주시기를 요청합니다.)`
         },
         { word: "response", 
-          hint: "1.응답,대응,반응",
-          comment: `The company's response to the crisis was very quick.<br>
-                    (그 회사의 위기 대응은 매우 신속했다.)`
+          hint: "1.응답,반응하다",
+          comment: {
+            title: "response",
+            parts: [
+              {
+                type: "명사 (Response)",
+                example: "The company's response to the crisis was very quick.",
+                translation: "(그 회사의 위기 대응은 매우 신속했다.)",
+              },              
+              {
+                type: "동사 (Respond)",
+                example: "Please respond to my email by tomorrow.",
+                translation: "(내일까지 내 이메일에 응답해 주세요.)",
+              },              
+            ]
+          }
         },
         { word: "require", 
           hint: "1.필요하다,요구하다<br>2.반드시 필요하거나,강제적 요구 상황",
@@ -394,8 +422,16 @@
         },
         { word: "Unless otherwise noted", 
           hint: "1.달리 명시되지 않은",
-          comment: `The store is open from 9 AM to 6 PM daily, unless otherwise noted.<br>
-                    (다른 언급이 없는 한, 가게는 매일 오전 9시부터 오후 6시까지 문을 엽니다.)`
+          comment: {
+            title: "Unless otherwise noted",
+            parts: [
+              {
+                type: "관용구,숙어 (Unless otherwise noted)",
+                example: "The store is open from 9 AM to 6 PM daily, unless otherwise noted.",
+                translation: "(다른 언급이 없는 한, 가게는 매일 오전 9시부터 오후 6시까지 문을 엽니다.)",
+              },              
+            ]
+          }
         },
         { word: "such as", 
           hint: "1.예를들어,~ 같은",
@@ -481,8 +517,26 @@
         },
         { word: "define", 
           hint: "1.정의하다,규정하다<br>2.본질적,명확한 답",
-          comment: `The new law defines who can vote.<br>
-                    (새로운 법은 누가 투표할 수 있는지 규정합니다.)`
+          comment: {
+            title: "define",
+            parts: [
+              {
+                type: "동사 (Define)",
+                example: `Please define the term "sustainability."`,
+                translation: "(지속 가능성이라는 용어를 정의해 주세요.)",
+              },     
+              {
+                type: "명사 (definition)",
+                example: "The dictionary provides a precise definition.",
+                translation: "(사전은 정확한 정의를 제공합니다.)",
+              },     
+              {
+                type: "형용사 (defined)",
+                example: "The picture has sharp, defined edges.",
+                translation: "(그 사진은 가장자리가 뚜렷하고 선명하다.)",
+              },        
+            ]
+          }
         },
         { word: "additional", 
           hint: "1.추가적인,부가적인<br>2.이미 있는 것에 더해지는 것", 
@@ -540,8 +594,22 @@
                     (회의 동안 전화기들은 꺼져 있었습니다.)` 
         },
         { word: "until", 
-          hint: "1.~이 되기까지<br>2.~이 되어서야 비로소",
-          comment: `We stayed there until Monday.<br>(우리는 월요일이 되기 까지 그곳에 머물렀다.)`
+          hint: "1.~까지",
+          comment: {
+            title: "until",
+            parts: [
+              {
+                type: "전치사/접속사 (Until)",
+                example: "We worked on the project until late at night.",
+                translation: "(우리는 밤늦게까지 그 프로젝트 작업을 했다.)",
+              },              
+              {
+                type: "전치사/접속사 (Until)",
+                example: "We stayed there until Monday.",
+                translation: "(우리는 월요일이 되기 까지 그곳에 머물렀다.)",
+              },              
+            ]
+          }
         },
         { word: "process", 
           hint: "1.처리하다,진행하다<br>2.과정,절차",
@@ -784,7 +852,22 @@
           comment: "The artist's new creation is beautiful.<br>(그 예술가의 새로운 창작물은 아름답다.)" 
         },
         { word: "improve", 
-          hint: "향상, 개선하다" 
+          hint: "1.향상시키다,개선하다<br>2.향상,개선,발전",
+          comment: {
+            title: "improve",
+            parts: [
+              {
+                type: "동사 (Improve)",
+                example: "We need to improve our customer service.",
+                translation: "(우리는 고객 서비스를 개선해야 한다.)",
+              },              
+              {
+                type: "명사 (Improvement)",
+                example: "There's been a significant improvement in her health.",
+                translation: "(그녀의 건강에 상당한 개선이 있었다.)",
+              },              
+            ]
+          } 
         },
         { word: "dependency", 
           hint: "1.하나의 의존성<br>2.특정대상에 의존하는 관계",
@@ -971,9 +1054,23 @@
                     (총 가격에 세금과 봉사료가 포함되어 있습니다.)`
         },
         { word: "import", 
-          hint: "1.도입하다,수입하다",
-          comment: `You need to import the 'math' library to use this function.<br>
-                    (이 함수를 사용하려면 'math' 라이브러리를 가져와야 합니다.)`
+          hint: "1.(데이터, 파일 등을) 불러오다,(상품을) 수입하다",
+          comment: {
+            title: "import",
+            parts: [
+              {
+                type: "동사 (Import)",
+                example: "You need to import the 'math' library to use this function.",
+                translation: "(이 함수를 사용하려면 'math' 라이브러리를 불러와야 합니다.)",
+              },              
+              {
+                type: "명사 (Import)",
+                example: "There was a sharp rise in imports last year.",
+                translation: "(작년에 수입이 급격히 증가했다.)",
+              },              
+            ]
+          }
+
         },
         { word: "condition", 
           hint: "1.현재 상태,필요 조건",
@@ -1158,7 +1255,7 @@
         },
         { word: "operate", 
           hint: "1.(기계·기관 등이)작동하다<br>2.(회사·공장이)운영하다",
-          comment: `This machine is easy to operate.<br>(이 기계는 작동하기 쉽다.)`
+          comment: `This machine is easy to operate.<br>(이 기계는 작동하기 쉽다.) operator - 프로그래밍 연산자`
         },
         { word: "encapsulation", 
           hint: "1.캡슐화",
