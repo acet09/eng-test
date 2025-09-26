@@ -73,7 +73,7 @@
       #com_mss {
         color: gray;
         text-align: left;
-        white-space: nowrap;
+        /* white-space: nowrap; */
       }
       #com_mss ol {
         text-align: left;
@@ -126,7 +126,6 @@
         color: gray;
         text-align: center;
         padding-top: 70px;
-        margin: 0 auto;
       }
     </style>
   </head>
@@ -301,25 +300,25 @@
           word: "resolve",
           hint: "1.해결하다,결심하다,분별하다",
           comment: {
-          title: "resolve",
+            title: "resolve",
             parts: [
               {
                 type: "동사 (resolve)",
-                example: "She resolved to study hard.",
-                translation: "(그녀는 열심히 공부하기로 결심했다.)",
+                example: "We need to resolve this conflict as soon as possible.",
+                translation: "우리는 이 갈등을 가능한 한 빨리 해결해야 합니다.",
               },
               {
                 type: "명사 (resolve)",
-                example: "He showed great resolve in facing the challenge.",
-                translation: "(그는 도전에 맞서며 대단한 결의를 보였다.)",
+                example: "He showed great resolve to finish the marathon.",
+                translation: "그는 마라톤을 완주하려는 대단한 결심을 보여주었다.",
               },
               {
-                type: "형용사 (resolved)",
-                example: "The issue is now resolved.",
-                translation: "(그 문제는 이제 해결되었다.)",
+                type: "명사 (resolution)",
+                example: "The new year's resolution is to exercise daily.",
+                translation: "새해 결심은 매일 운동하는 것이다.",
               },
-            ]
-          }
+            ],
+          },
         },
         {
           word: "serialize",
@@ -408,8 +407,26 @@
         {
           word: "statement",
           hint: "1.성명,진술<br>2.공식적이고 확실한 내용 전달이나 행위",
-          comment: `That's a very bold statement.<br>
-                    (그것은 아주 대담한 발언이군요.)`,
+          comment: {
+            title: "statement",
+            parts: [
+              {
+                type: "명사 (statement)",
+                example: "The company released a public statement.",
+                translation: "그 회사는 공식 성명을 발표했다.",
+              },
+              {
+                type: "명사 (statement)",
+                example: "Check your bank statement for recent activity.",
+                translation: "최근 활동 내역을 확인하려면 은행 명세서를 확인하세요.",
+              },
+              {
+                type: "동사 (state)",
+                example: "He stated his opinion clearly.",
+                translation: "그는 자신의 의견을 명확하게 진술했다.",
+              },
+            ],
+          },
         },
         {
           word: "prevent",
@@ -694,21 +711,8 @@
         {
           word: "evaluate",
           hint: "1.평가하다,감정하다",
-          comment: {
-            title: "evaluate",
-            parts: [
-              {
-                type: "(evaluate)",
-                example: "We need to evaluate the pros and cons.",
-                translation: "(우리는 장단점을 평가할 필요가 있다.)",
-              },
-              {
-                type: "명사 (evaluation)",
-                example: "The evaluation of the project will take a week.",
-                translation: "(그 프로젝트의 평가는 일주일이 걸릴 것이다.)",
-              },
-            ]
-          }
+          comment: `We need to evaluate the risks of the project.<br>
+                    (우리는 그 프로젝트의 위험을 평가해야 합니다.)`,
         },
         {
           word: "environment",
@@ -756,32 +760,27 @@
         {
           word: "process",
           hint: "1.처리하다,진행하다<br>2.과정,절차",
-          comment: {
-            title: "process",
-            parts: [
-              {
-                type: "동사 (process)",
-                example: "This factory processes raw materials.",
-                translation: "(이 공장은 원자재를 가공한다.)",
-              },
-              {
-                type: "명사 (process)",
-                example: "The application process takes two weeks.",
-                translation: "(신청 절차는 2주가 걸립니다.)",
-              },
-              {
-                type: "보어 (a slow process.)",
-                example: "Learning a language is a slow process",
-                translation: "(언어를 배우는 것은 느린 과정이다.)",
-              },
-            ]
-          }
+          comment: `Learning a language is a slow process.<br>
+                    (언어를 배우는 것은 느린 과정이다.)`,
         },
         {
           word: "handle",
           hint: "1.손잡이<br>2.다루다,처리하다",
-          comment: `The manager will handle the customer complaint.<br>
-                    (매니저가 고객 불만을 처리할 것이다.)`,
+          comment: {
+            title: "handle",
+            parts: [
+              {
+                type: "동사 (handle)",
+                example: "The manager will handle the customer complaint.",
+                translation: "매니저가 고객 불만을 처리할 것이다.",
+              },
+              {
+                type: "명사 (handler)",
+                example: "An event handler is a function that processes an event.",
+                translation: "이벤트 핸들러는 이벤트를 처리하는 함수이다.",
+              },
+            ],
+          },
         },
         {
           word: "manipulate",
@@ -814,28 +813,10 @@
           },
         },
         {
-          word: "current",
-          hint: "1.현재의,흐르는",
-          comment: {
-            title: "current",
-            parts: [
-              {
-                type: "형용사 (current)",
-                example: "What is your current address?",
-                translation: "(당신의 현재 주소는 무엇입니까?)",
-              },
-              {
-                type: "명사 (current)",
-                example: "The boat was carried away by the strong current.",
-                translation: "(배가 강한 조류에 휩쓸려 갔다.)",
-              },
-              {
-                type: "부사 (currently)",
-                example: "He is currently working as a freelance designer.",
-                translation: "(그는 현재 프리랜서 디자이너로 일하고 있다.)",
-              },
-            ]
-          }
+          word: "currently",
+          hint: "1.현재,최근에",
+          comment: `He is currently working as a freelance designer.<br>
+                    (그는 현재 프리랜서 디자이너로 일하고 있다.)`,
         },
         {
           word: "correct",
@@ -897,7 +878,7 @@
         { word: "access", hint: "접근" },
         {
           word: "authentication",
-          hint: "1.인증,신원확인,인증도구",
+          hint: "1.인증,신원확인,인증도구<br>2.본인이 누구인지 확인 (로그인)",
           comment: {
             title: "authentication",
             parts: [
@@ -923,7 +904,7 @@
         },
         {
           word: "authorization",
-          hint: "1.권한부여,허가,승인",
+          hint: "1.권한부여,허가,승인<br>2.특정 리소스에 권한이 있는지 확인 (등급 권한)",
           comment: {
             title: "authorization",
             parts: [
@@ -973,57 +954,35 @@
         {
           word: "generate",
           hint: "1.생성하다,만들어내다,발생시키다",
-          comment: {
-            title: "generate",
-            parts: [
-              {
-                type: "동사 (generate)",
-                example: "We need to generate new ideas for the project.",
-                translation: "(우리는 그 프로젝트를 위한 새로운 아이디어들을 만들어낼 필요가 있다.)",
-              },
-              {
-                type: "Generation (명사)",
-                example: "The generation of electricity is a complex process.",
-                translation: "(전기 생산은 복잡한 과정입니다.)",
-              },
-              {
-                type: "Generator (명사)",
-                example: "The power went out, so we used a generator.",
-                translation: "(정전이 돼서 발전기를 사용했습니다.)",
-              },
-              {
-                type: "Generative (형용사)",
-                example: "This is a generative AI model.",
-                translation: "(이것은 생성형 AI 모델입니다.)",
-              },
-            ]
-          }
+          comment: `Good ideas don't just happen; you have to work to generate them.<br>
+                    (좋은 아이디어는 그냥 생기는 것이 아니라, 그것을 만들어내기 위해 노력해야 한다.)`,
+        },
+        {
+          word: "declare",
+          hint: "1.선언하다,발표하다<br>2.신고하다",
+          comment: `You must make a declaration before using a variable.<br>
+                    (변수를 사용하기 전에 선언을 해야 한다.)`,
         },
         {
           word: "certain",
-          hint: "1.확실한,틀림없는(확신을 나타내는 상태)<br>2.불분명한,특정하지 않은 대상",
+          hint: "1.확실한,틀림없는(확신을 나타내는 상태)<br>2.어떤 대상",
           comment: {
             title: "certain",
             parts: [
               {
                 type: "형용사/확실한 (certain)",
                 example: "I'm certain that he will win the race.",
-                translation: "(나는 그가 경주에서 이길 것이라고 확신한다.)",
+                translation: "나는 그가 경주에서 이길 것이라고 확신한다.",
               },
               {
                 type: "형용사/불분명한 (certain)",
                 example: "A certain person told me the news.",
-                translation: "(어떤 사람이 나에게 그 소식을 전해줬어.)",
-              },
-              {
-                type: "명사 (certainty)",
-                example: "We can't predict the future with certainty.",
-                translation: "(우리는 미래를 확실하게 예측할 수 없다.)",
+                translation: "어떤 사람이 나에게 그 소식을 전해줬어.",
               },
               {
                 type: "부사 (certainly)",
-                example: "Q: Are you coming?, A: Certainly.",
-                translation: "(올 거야?, 물론이지.)",
+                example: "Q: Are you coming?  A: Certainly!",
+                translation: "올 거야?  물론이지!",
               },
             ],
           },
@@ -1050,12 +1009,12 @@
               {
                 type: "동사 (reject)",
                 example: "The committee chose to reject his proposal.",
-                translation: "(위원회는 그의 제안을 거절하기로 결정했다.)",
+                translation: "위원회는 그의 제안을 거절하기로 결정했다.",
               },
               {
                 type: "명사 (reject)",
                 example: "The factory sells its rejects at a lower price.",
-                translation: "(그 공장은 불량품을 더 낮은 가격에 판매한다.)",
+                translation: "그 공장은 불량품을 더 낮은 가격에 판매한다.",
               },
             ],
           },
@@ -1068,10 +1027,33 @@
         },
         { word: "configuration", hint: "구성, 형상, 지형, 윤곽" },
         {
-          word: "creation",
-          hint: "1.창조, 창작물 (완성된 결과물)",
-          comment:
-            "The artist's new creation is beautiful.<br>(그 예술가의 새로운 창작물은 아름답다.)",
+          word: "create",
+          hint: "1.창조하다,만들다",
+          comment: {
+            title: "create",
+            parts: [
+              {
+                type: "동사 (create)",
+                example: "We need to create a new strategy.",
+                translation: "우리는 새로운 전략을 만들어야 한다.",
+              },
+              {
+                type: "형용사 (creative)",
+                example: "She has a creative mind.",
+                translation: "그녀는 창의적인 사고를 가지고 있다.",
+              },
+              {
+                type: "부사 (creatively)",
+                example: "The problem was solved creatively.",
+                translation: "그 문제는 창의적으로 해결되었다.",
+              },
+              {
+                type: "명사 (creation)",
+                example: "The artist's new creation is beautiful.",
+                translation: "그 예술가의 새로운 창작물은 아름답다.",
+              },
+            ],
+          },
         },
         {
           word: "improve",
@@ -1082,13 +1064,13 @@
               {
                 type: "동사 (Improve)",
                 example: "We need to improve our customer service.",
-                translation: "(우리는 고객 서비스를 개선해야 한다.)",
+                translation: "우리는 고객 서비스를 개선해야 한다.",
               },
               {
                 type: "명사 (Improvement)",
                 example:
                   "There's been a significant improvement in her health.",
-                translation: "(그녀의 건강에 상당한 개선이 있었다.)",
+                translation: "그녀의 건강에 상당한 개선이 있었다.",
               },
             ],
           },
@@ -1102,12 +1084,12 @@
               {
                 type: "명사 (dependency)",
                 example: "The app has a dependency on a database.",
-                translation: "(그 앱은 데이터베이스에 의존성을 가집니다.)",
+                translation: "그 앱은 데이터베이스에 의존성을 가집니다.",
               },
               {
                 type: "동사 (depend)",
                 example: "The outcome depends on the weather.",
-                translation: "(그 결과는 날씨에 달려 있다.)",
+                translation: "그 결과는 날씨에 달려 있다.",
               },
             ],
           },
@@ -1119,11 +1101,9 @@
             title: "dependencies",
             parts: [
               {
-                type: "명사 (Dependencies)",
-                example:
-                  "You must install all the project's dependencies first",
-                translation:
-                  "(프로젝트의 모든 의존성들을 먼저 설치해야 합니다.)",
+                type:"명사 (Dependencies)",
+                example: "You must install all the project's dependencies first",
+                translation: "프로젝트의 모든 의존성들을 먼저 설치해야 합니다.",
               },
             ],
           },
@@ -1169,7 +1149,7 @@
               {
                 type: "명사 (mechanism)",
                 example: "The human body has a complex healing mechanism.",
-                translation: "(인체는 복잡한 치유 메커니즘을 가지고 있습니다.)",
+                translation: "인체는 복잡한 치유 메커니즘을 가지고 있습니다.",
               },
             ],
           },
@@ -1240,17 +1220,17 @@
               {
                 type: "형용사 (clear)",
                 example: "The sky is crystal clear after the rain.",
-                translation: "(비 온 뒤의 하늘은 구름 한 점 없이 맑다)",
+                translation: "비 온 뒤의 하늘은 구름 한 점 없이 맑다",
               },
               {
                 type: "동사 (clear)",
                 example: "Please clear the table after dinner.",
-                translation: "(저녁 식사 후에 식탁을 치워주세요.)",
+                translation: "저녁 식사 후에 식탁을 치워주세요.",
               },
               {
                 type: "부사 (clear)",
                 example: "We need to speak clear to be understood.",
-                translation: "(우리는 이해받기 위해 명확히 말해야 한다.)",
+                translation: "우리는 이해받기 위해 명확히 말해야 한다.",
               },
             ],
           },
@@ -1260,10 +1240,23 @@
           hint: "1.may의 과거형<br>2.~해도 좋다<br>3.~할지도 모른다",
         },
         {
-          word: "termination",
-          hint: "1.종료,마감<br>2.최종적인 끝",
-          comment: `We have received your request for service termination<br>
-                    (서비스 종료 요청을 접수했습니다.)`,
+          word: "terminate",
+          hint: "1.(완전히)끝나다,종료되다",
+          comment: {
+            title: "terminate",
+            parts: [
+              {
+                type: "동사 (terminate)",
+                example: "We will terminate the contract.",
+                translation: "우리는 계약을 종료할 것이다.",
+              },
+              {
+                type: "명사 (termination)",
+                example: "We have received your request for service termination",
+                translation: "서비스 종료 요청을 접수했습니다.",
+              },
+            ],
+          },
         },
         {
           word: "increment",
@@ -1274,13 +1267,12 @@
               {
                 type: "동사 (Increment)",
                 example: "The program will increment the counter by one.",
-                translation:
-                  "(그 프로그램은 카운터의 값을 1씩 증가시킬 것입니다.)",
+                translation: "그 프로그램은 카운터의 값을 1씩 증가시킬 것입니다.",
               },
               {
                 type: "명사 (Increment)",
                 example: "He got a small increment in his salary.",
-                translation: "(그는 급여에서 약간의 인상을 받았습니다.)",
+                translation: "그는 급여에서 약간의 인상을 받았습니다.",
               },
             ],
           },
@@ -1288,8 +1280,21 @@
         {
           word: "decrement",
           hint: "1.감소<br>2.정해진 값만큼 줄임",
-          comment: `We need to decrement the counter by one<br>
-                    (카운터를 1씩 줄여야 합니다.)`,
+          comment: {
+            title: "decrement",
+            parts: [
+              {
+                type: "동사 (decrement)",
+                example: "We need to decrement the counter by one.",
+                translation: "그 반복문은 카운터를 1씩 감소시킬 것이다.",
+              },
+              {
+                type: "명사 (decrement)",
+                example: "We need to apply a decrement to the value.",
+                translation: "우리는 그 값에 감소를 적용해야 한다.",
+              },
+            ],
+          },
         },
         {
           word: "reduce",
@@ -1311,22 +1316,9 @@
         },
         {
           word: "include",
-          hint: "1.포함하다,포함",
-          comment: {
-            title: "include",
-            parts: [
-              {
-                type: "동사 (include)",
-                example: "The price includes tax and service.",
-                translation: "(가격에는 세금과 서비스가 포함되어 있습니다.)",
-              },
-              {
-                type: "명사 (inclusion)",
-                example: "The inclusion of all students is our goal.",
-                translation: "(모든 학생의 포함이 우리의 목표다.)",
-              },
-            ]
-          }
+          hint: "1.포함하다<br>2.범위 안에 특정 대상이 속하도록",
+          comment: `The total price includes tax and service charge.<br>
+                    (총 가격에 세금과 봉사료가 포함되어 있습니다.)`,
         },
         {
           word: "import",
@@ -1336,15 +1328,13 @@
             parts: [
               {
                 type: "동사 (Import)",
-                example:
-                  "You need to import the 'math' library to use this function.",
-                translation:
-                  "(이 함수를 사용하려면 'math' 라이브러리를 불러와야 합니다.)",
+                example: "You need to import the 'math' library to use this function.",
+                translation: "이 함수를 사용하려면 'math' 라이브러리를 불러와야 합니다.",
               },
               {
                 type: "명사 (Import)",
                 example: "There was a sharp rise in imports last year.",
-                translation: "(작년에 수입이 급격히 증가했다.)",
+                translation: "작년에 수입이 급격히 증가했다.",
               },
             ],
           },
@@ -1358,16 +1348,8 @@
         {
           word: "whether",
           hint: "1.~인지 아닌지,<br>2.불확실한 상황<br>3.둘 이상의 가능성 중 하나 택",
-          comment: {
-            title: "represent",
-            parts: [
-              {
-                type: "접속사 (whether)",
-                example: "The project will succeed whether we get the funding or not.",
-                translation: "(우리가 자금을 받든 안 받든 프로젝트는 성공할 것이다.)",
-              },
-            ]
-          }
+          comment: `The project will succeed whether we get the funding or not.<br> 
+                    (우리가 자금을 받든 안 받든 프로젝트는 성공할 것이다.)`,
         },
         {
           word: "determine",
@@ -1384,23 +1366,20 @@
               {
                 type: "동사 (decide)",
                 example: "This victory was a decisive moment in the war.",
-                translation: "(이 승리는 전쟁에서 결정적인 순간이었다.)",
+                translation: "이 승리는 전쟁에서 결정적인 순간이었다.",
               },
               {
                 type: "명사 (decision)",
                 example: "Your decision will affect the entire team.",
-                translation: "(당신의 결정이 팀 전체에 영향을 미칠 것이다.)",
+                translation: "당신의 결정이 팀 전체에 영향을 미칠 것이다.",
               },
               {
                 type: "형용사 (decisive)",
                 example: "We need a decisive leader to solve this problem.",
-                translation:
-                  "(우리는 이 문제를 해결할 결단력 있는 리더가 필요하다.)",
+                translation: "우리는 이 문제를 해결할 결단력 있는 리더가 필요하다.",
               },
             ],
           },
-          // comment: `This victory was a decisive moment in the war.<br>
-          //           (이 승리는 전쟁에서 결정적인 순간이었다.)`
         },
         {
           word: "cryptographic",
@@ -1451,18 +1430,18 @@
               {
                 type: "명사 (type)",
                 example: "What type of music do you like?",
-                translation: "(어떤 종류의 음악을 좋아하세요?)",
+                translation: "어떤 종류의 음악을 좋아하세요?",
               },
               {
                 type: "형용사 (typical)",
                 example: "This weather is typical for September in Seoul.",
                 translation:
-                  "(이런 날씨는 서울에서 9월에 흔히 볼 수 있습니다.)",
+                  "이런 날씨는 서울에서 9월에 흔히 볼 수 있습니다.",
               },
               {
                 type: "부사 (typically)",
                 example: "He typically arrives at work early.",
-                translation: "(그는 보통 일찍 출근한다.)",
+                translation: "그는 보통 일찍 출근한다.",
               },
             ],
           },
@@ -1486,19 +1465,7 @@
                     (오늘은 특별한 날이니, 우리가 축하해야 해.)`,
         },
         { word: "with a", hint: "~을 사용해서" },
-        { word: "elapsed Time", 
-          hint: "1.경과 시간",
-          comment: {
-            title: "elapsed Time",
-            parts: [
-              {
-                type: "명사구 (Elapsed time)",
-                example: "The computer shows the elapsed time for the download.",
-                translation: "(컴퓨터에 다운로드에 대한 경과 시간이 표시된다.)",
-              },
-            ]
-          }
-        },
+        { word: "elapsed Time", hint: "경과 시간" },
         {
           word: "transient",
           hint: "1.일시적인",
@@ -1547,12 +1514,12 @@
               {
                 type: "동사 (Loop)",
                 example: "You can loop the video by clicking here.",
-                translation: "(여기를 클릭해서 영상을 반복 재생할 수 있어요.)",
+                translation: "여기를 클릭해서 영상을 반복 재생할 수 있어요.",
               },
               {
                 type: "명사 (Loop)",
                 example: "The code is stuck in an infinite loop.",
-                translation: "(그 코드는 무한 루프에 빠졌다.)",
+                translation: "그 코드는 무한 루프에 빠졌다.",
               },
             ],
           },
@@ -1560,8 +1527,26 @@
         {
           word: "infinite",
           hint: "1.무한한,끝없는",
-          comment: `The universe is infinite.<br>
-                    (우주는 무한하다.)`,
+          comment: {
+            title: "infinite",
+            parts: [
+              {
+                type: "형용사 (infinite)",
+                example: "The universe is an infinite space.",
+                translation: "우주는 무한한 공간이다.",
+              },
+              {
+                type: "명사 (infinity)",
+                example: "This line goes on to infinity.",
+                translation: "이 선은 무한대까지 이어진다.",
+              },
+              {
+                type: "부사 (infinitely)",
+                example: "He is infinitely patient.",
+                translation: "그는 무한히 인내심이 강하다.",
+              },
+            ],
+          },
         },
         {
           word: "related",
@@ -1613,8 +1598,7 @@
               {
                 type: "(두 대상 간의) 상호 관계 / we,they(추상적 수)",
                 example: "We should help each other to finish the project.",
-                translation:
-                  "우리는 프로젝트를 끝내기 위해 서로를 도와야 한다.",
+                translation: "우리는 프로젝트를 끝내기 위해 서로를 도와야 한다.",
               },
               {
                 type: "(둘 이상의 대상에 적용될 때 / three(구체적 수))",
@@ -1652,23 +1636,23 @@
                 type: "부정문에서: ~도 또한",
                 example: "He doesn't like coffee, and I don't either.",
                 translation:
-                  "(그는 커피를 좋아하지 않고, 나도 역시 좋아하지 않는다.)",
+                  "그는 커피를 좋아하지 않고, 나도 역시 좋아하지 않는다.",
               },
               {
                 type: "한정사 (Determiner)",
                 example: "You can take either road to the park.",
-                translation: "(공원까지 가는 둘 중 어느 길을 택해도 좋다.)",
+                translation: "공원까지 가는 둘 중 어느 길을 택해도 좋다.",
               },
               {
                 type: "대명사 (Pronoun)",
                 example: "Do you want tea or coffee?, Either is fine.",
                 translation:
-                  "(차 마실래 커피 마실래?, 둘 중 어느 것이든 괜찮아.)",
+                  "차 마실래 커피 마실래?, 둘 중 어느 것이든 괜찮아.",
               },
               {
                 type: "상관 접속사 (Correlative Conjunction)",
                 example: "You can either call me or send a text.",
-                translation: "(나에게 전화하거나 문자를 보내도 돼.)",
+                translation: "나에게 전화하거나 문자를 보내도 돼.",
               },
             ],
           },
@@ -1735,27 +1719,9 @@
         },
         {
           word: "declare",
-          hint: "1.선언하다,발표하다<br>2.(세관에)신고하다",
-          comment: {
-            title: "declare",
-            parts: [
-              {
-                type: "동사 (declare)",
-                example: "The government declared a state of emergency.",
-                translation: "(정부는 비상사태를 선포했다.)",
-              },
-              {
-                type: "동사 (declare)",
-                example: "You must declare all goods at customs.",
-                translation: "(당신은 세관에 모든 물품을 신고해야 합니다.)",
-              },
-              {
-                type: "명사 (declaration)",
-                example: "They made a joint declaration of peace.",
-                translation: "(그들은 평화에 대한 공동 선언을 했다.)",
-              },
-            ]
-          }
+          hint: "1.(공식적으로)선언하다,공표하다",
+          comment: `You must declare all goods at customs.<br>
+                    (세관에 모든 물품을 신고해야 합니다.)`,
         },
         {
           word: "grant",
@@ -1847,14 +1813,14 @@
                 example:
                   "Your browser's cache stores frequently visited web pages.",
                 translation:
-                  "(당신의 브라우저 캐시는 자주 방문하는 웹페이지를 저장합니다.)",
+                  "당신의 브라우저 캐시는 자주 방문하는 웹페이지를 저장합니다.",
               },
               {
                 type: "명사 (cache)",
                 example:
                   "Your browser will cache these images to load them faster next time.",
                 translation:
-                  "(브라우저는 다음번에 더 빨리 로드하기 위해 이 이미지들을 캐시할 것이다.)",
+                  "브라우저는 다음번에 더 빨리 로드하기 위해 이 이미지들을 캐시할 것이다.",
               },
             ],
           },
@@ -1907,6 +1873,70 @@
           hint: "1.빈도,주파수",
           comment: `Radio waves have different frequencies.<br>
                     (라디오파는 서로 다른 주파수를 가진다.)`,
+        },
+        { word: "privilege",
+          hint: "1.특권,혜택",
+          comment: {
+            title: "privilege",
+            parts: [
+              {
+                type: "Privileges (명사)",
+                example: "The root account can grant many privileges to other accounts.",
+                translation: "root계정은 다른 계정에게 많은 특권들을 부여할수있다.",
+              },
+              {
+                type: "Privileged (형용사)",
+                example: "She comes from a privileged background.",
+                translation: "그녀는 특권층 배경 출신이다.",
+              },
+              {
+                type: "Privileged (동사, 과거형/과거분사):",
+                example: "The king privileged the merchant with a special title.",
+                translation: "왕은 그 상인에게 특별한 작위를 수여하여 특권을 주었다.",
+              },
+            ]
+          }
+        },
+        { word: "grant",
+          hint: "1.승인하다,허가하다",
+          comment: {
+            title: "grant",
+            parts: [
+              {
+                type: "동사 (grant)",
+                example: "For security, grant only minimum necessary privileges.",
+                translation: "보안을 위해 최소한의 필수 권한만 부여해야 합니다.",
+              },
+              {
+                type: "명사 (grant)",
+                example: "She received a grant for her research project.",
+                translation: "그녀는 연구 프로젝트를 위한 보조금을 허가 받았다.",
+              },
+            ]
+          }
+        },
+        { word: "ambiguous",
+          hint: "1.애매모호한",
+          comment: {
+            title: "ambiguous",
+            parts: [
+              {
+                type: "형용사 (ambiguous)",
+                example: "The instructions were so ambiguous.",
+                translation: "지시사항이 너무 모호했다.",
+              },
+              {
+                type: "명사 (ambiguity)",
+                example: "We need to clear up the ambiguity.",
+                translation: "우리는 그 모호함을 명확히 할 필요가 있다.",
+              },
+              {
+                type: "부사 (ambiguously)",
+                example: "He ambiguously answered the question.",
+                translation: "그는 질문에 애매모호하게 대답했다.",
+              },
+            ]
+          }
         },
 
         // { word: "represent",
