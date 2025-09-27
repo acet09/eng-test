@@ -163,7 +163,8 @@
         <div id="com_mss"></div>
       </div>
       <footer>
-        <span>last update - 25.09.23</span>
+        <!-- 업데이트 날짜 갱신 확인하기 -->
+        <span>last update - 25.09.28</span>
       </footer>
     </div>
     <script>
@@ -203,8 +204,31 @@
         {
           word: "inspect",
           hint: "1.검사하다,점검하다<br>2.제품에 하자나 결함이 없는지 확인",
-          comment: `He carefully inspected the document for any errors.<br>
-                    (그는 오류가 없는지 문서를 꼼꼼히 조사했습니다.)`,
+          comment: {
+            title: "inspect",
+            parts: [
+              {
+                type: "동사 (inspect)",
+                example: "He carefully inspected the document for any errors.",
+                translation: "그는 오류가 없는지 문서를 꼼꼼히 조사했습니다.",
+              },              
+              {
+                type: "명사(inspection)",
+                example: "The factory failed the safety inspection.",
+                translation: "그 공장은 안전 검사를 통과하지 못했습니다.",
+              },              
+              {
+                type: "형용사(inspective)",
+                example: "His inspective eyes missed nothing.",
+                translation: "그의 면밀하게 살피는 눈은 아무것도 놓치지 않았습니다.",
+              },              
+              {
+                type: "부사(inspectingly)",
+                example: "She looked at the report inspectingly.",
+                translation: "그녀는 보고서를 자세히 살피며 보았습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "extract",
@@ -370,8 +394,21 @@
         {
           word: "request",
           hint: "1.요청,요청하다<br>2.정중한 동의,협조",
-          comment: `I request that you send me the documents by tomorrow.<br> 
-                    (저는 내일까지 서류를 보내주시기를 요청합니다.)`,
+          comment: {
+            title: "request",
+            parts: [
+              {
+                type: "동사 (request)",
+                example: "I request that you send me the documents by tomorrow",
+                translation: "저는 내일까지 서류를 보내주시기를 요청합니다.",
+              },              
+              {
+                type: "명사 (request)",
+                example: "I received a request for the document.",
+                translation: "저는 그 서류에 대한 요청을 받았습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "response",
@@ -599,10 +636,33 @@
                     (이 영화는 실화를 바탕으로 합니다.)`,
         },
         {
-          word: "concurrent",
-          hint: "1.동시에 발생하는,병행하는<br>2.전문적이고 공식적인(기술,과학,법률)",
-          comment: `The software allows for concurrent use by multiple users.<br>
-                    (이 소프트웨어는 여러 사용자가 동시에 사용할 수 있도록 합니다.)`,
+          word: "concur",
+          hint: "1.동의하다,동시에 발생하다",
+          comment: {
+            title: "concur",
+            parts: [
+              {
+                type: "동사 (concur)",
+                example: "The concur with the new plan  ",
+                translation: "그들은 새 계획에 동의합니다.",
+              },              
+              {
+                type: "명사(concurrence)",
+                example: "We need their concurrence on the proposal.",
+                translation: "우리는 그들의 제안에 대한 동의가 필요합니다.",
+              },              
+              {
+                type: "형용사(concurrent)",
+                example: "The software allows for concurrent use by multiple users.",
+                translation: "이 소프트웨어는 여러 사용자가 동시에 사용할 수 있도록 합니다.",
+              },              
+              {
+                type: "부사(concurrently)",
+                example: "The tasks ran concurrently on the server.",
+                translation: "작업들은 서버에서 동시에 실행되었습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "through",
@@ -698,9 +758,27 @@
         },
         {
           word: "unit",
-          hint: "1.구성 단위",
-          comment: `A meter is a standard unit of length.<br>
-                    (미터는 길이의 표준 단위이다.)`,
+          hint: "1.구성 단위,부대",
+          comment: {
+            title: "unit",
+            parts: [
+              {
+                type: "명사 (unit)",
+                example: "A meter is a standard unit of length.",
+                translation: "미터는 길이의 표준 단위이다.",
+              },              
+              {
+                type: "형용사 (unite)",
+                example: "The leader's speech united the crowd.",
+                translation: "리더의 연설이 군중을 단결시켰습니다.",
+              },                              
+              {
+                type: "형용사 (unary)",
+                example: "The plus sign in +5 is a unary operator.",
+                translation: "+5의 '+'기호는 단항 연산자이다.",
+              },                       
+            ]
+          }
         },
         {
           word: "deal",
@@ -996,8 +1074,26 @@
         {
           word: "avoid",
           hint: "1.피하다,회피하다",
-          comment: `You should avoid eating too much sugar.<br>
-                    (설탕을 너무 많이 먹는 것을 피해야 한다.)`,
+          comment: {
+            title: "avoid",
+            parts: [
+              {
+                type: "동사 (avoid)",
+                example: "You should avoid eating too much sugar.",
+                translation: "설탕을 너무 많이 먹는 것을 피해야 한다.",
+              },              
+              {
+                type: "명사(avoidance)",
+                example: "His avoidance of conflict is well-known.",
+                translation: "그의 갈등 회피는 잘 알려져 있습니다.",
+              },              
+              {
+                type: "형용상 (avoidable)",
+                example: "The accident was entirely aboidable.",
+                translation: "그 사고는 전적으로 피할 수 있는 것이었습니다.",
+              },              
+            ]
+          }
         },
         { word: "modify", hint: "수정하다" },
         {
@@ -1199,8 +1295,16 @@
         {
           word: "can be",
           hint: "1.~일 수 있다,~할 수 있다",
-          comment: `The weather can be unpredictable in the mountains.<br>
-                    (산에서는 날씨가 예측 불가능할 수 있습니다.)`,
+          comment: {
+            title: "can be",
+            parts: [
+              {
+                type: "조동사+be동사 (can be)",
+                example: "The weather can be unpredictable in the mountains.",
+                translation: "산에서는 날씨가 예측 불가능할 수 있습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "to be",
@@ -1208,7 +1312,29 @@
           comment:
             "Her goal is to be happy.<br>(그녀의 목표는 행복하게 되는 것이다.)",
         },
-        { word: "associate", hint: "연상하다, 관련시켜 생각하다, 연결하다" },
+        { word: "associate", 
+          hint: "1.연상시키다,어울리다<br>2.동료,준회원,준~", 
+          comment: {
+            title: "associate",
+            parts: [
+              {
+                type: "동사 (associate)",
+                example: "I associate that song with my childhood.",
+                translation: "저는 그 노래를 제 유년 시절과 연관 짓습니다.",
+              },              
+              {
+                type: "명사 (associate)",
+                example: "He is my business associate.",
+                translation: "그는 저의 사업 동료입니다,",
+              },              
+              {
+                type: "형용사 (associate)",
+                example: "She holds an assciate degree",
+                translation: "그녀는 전문학사 학위를 가지고 있습니다.",
+              },              
+            ]
+          }
+        },
         { word: "criteria", hint: "기준" },
         { word: "absence", hint: "부재, 결석" },
         {
@@ -1454,9 +1580,27 @@
         },
         {
           word: "particular",
-          hint: "특정한,개별적인,까다로운(부정적)",
-          comment: `She's very particular about her coffee.<br>
-                    (그녀는 커피에 대해 매우 까다롭다.)`,
+          hint: "1.특정한,까다로운<br>2.세부사항",
+          comment: {
+            title: "particular",
+            parts: [
+              {
+                type: "형용사 (particular)",
+                example: "She's very particular about her coffee.",
+                translation: "그녀는 커피에 대해 매우 까다롭다.",
+              },              
+              {
+                type: "명사 (particulars)",
+                example: "I did not catch the particulars of the plan.",
+                translation: "저는 계획의 세부 사항을 파악하지 못했습니다.",
+              },              
+              {
+                type: "부사(particularly)",
+                example: "He is not particularly fond of spicy food.",
+                translation: "그는 매운 음식을 딱히 좋아하지 않습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "special",
@@ -1549,16 +1693,38 @@
           },
         },
         {
-          word: "related",
-          hint: "1.~와 관련된,~와 연관된,친족",
-          comment: `Are you guys related?<br>
-                    (당신들 가족 관계이신가요?)`,
-        },
-        {
           word: "relate",
-          hint: "1.관련시키다,연관짓다,공감하다",
-          comment: `The speaker tried to relate the theory to real life.<br>
-                    (연사는 그 이론을 현실과 연관시키려고 했습니다.)`,
+          hint: "1.관련시키다,연관짓다",
+          comment: {
+            title: "relate",
+            parts: [
+              {
+                type: "동사 (relate)",
+                example: "relate one's experiences to a person",
+                translation: "자신의 경험을 다른 사람에게 이야기하다",
+              },              
+              {
+                type: "형용사 (related)",
+                example: "Are you guys related?",
+                translation: "당신들 가족 관계이신가요?",
+              },              
+              {
+                type: "명사 (relation)",
+                example: "The relation between stress and illness is complex.",
+                translation: "스트레스와 질병의 관계는 복잡합니다.",
+              },              
+              {
+                type: "명사 (relationship)",
+                example: "They have a close relationship.",
+                translation: "그들은 친밀한 관계입니다.",
+              },              
+              {
+                type: "부사 (relatively)",
+                example: "It's relatively easy to solve this problem.",
+                translation: "이 문제를 해결하는 것은 비교적 쉽습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "will cause",
@@ -1575,7 +1741,31 @@
         {
           word: "operate",
           hint: "1.(기계·기관 등이)작동하다<br>2.(회사·공장이)운영하다",
-          comment: `This machine is easy to operate.<br>(이 기계는 작동하기 쉽다.) operator - 프로그래밍 연산자`,
+          comment: {
+            title: "operate",
+            parts: [
+              {
+                type: "동사 (operate)",
+                example: "This machine is easy to operate.",
+                translation: "이 기계는 작동하기 쉽다.",
+              },              
+              {
+                type: "명사 (operation)",
+                example: "The factory's operation was halted.",
+                translation: "공장의 운영이 중단되었습니다.",
+              },              
+              {
+                type: "명사 (operator)",
+                example: "A machine operator controls the device.",
+                translation: "기계 조작자가 장치를 제어합니다.",
+              },              
+              {
+                type: "형용사 (operative)",
+                example: "The new rule is now operative.",
+                translation: "새로운 규정이 이제 시행 중입니다.",
+              },              
+            ]
+          }
         },
         {
           word: "encapsulation",
@@ -1832,12 +2022,6 @@
                     (군사 체계는 엄격한 종속 관계를 기반으로 합니다.)`,
         },
         {
-          word: "unary",
-          hint: "1.하나의,단일요소<br>2.단항 연산자",
-          comment: `The plus sign in +5 is a unary operator.<br>
-                    (+5의 '+'기호는 단항 연산자이다)`,
-        },
-        {
           word: "essential",
           hint: "1.필수적인,극히 중요한<br>2.본질적인<br>3.없어서는 안 될 만큼 중요한 것",
           comment: `Hard work is an essential part of success.<br>
@@ -1938,6 +2122,10 @@
             ]
           }
         },
+
+        // effect - 영향
+        // turned off - 전원이 꺼진 상태
+
 
         // { word: "represent",
         //   hint: "1.대표하다,나타낸다",
