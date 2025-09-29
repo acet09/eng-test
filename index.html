@@ -164,7 +164,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 25.09.28</span>
+        <span>last update - 25.09.30</span>
       </footer>
     </div>
     <script>
@@ -198,8 +198,26 @@
         {
           word: "examine",
           hint: "1.조사하다,진찰하다,검토하다<br>2.본질적인 상태,원인을 들여다보는",
-          comment: `The police will examine the evidence.<br>
-                    (경찰이 증거를 조사할 것입니다.)`,
+          comment: {
+            title: "examine",
+            parts: [
+              {
+                type: "동사 (examine)",
+                example: "The police will examine the evidence.",
+                translation: "경찰이 증거를 조사할 것입니다.",
+              },
+              {
+                type: "형용사 (Examined)",
+                example: "The examined report is ready.",
+                translation: "검토된 보고서가 준비되었다.)",
+              },
+              {
+                type: "명사 (Examination)",
+                example: "The doctor's examination was thorough.",
+                translation: "의사의 검사는 철저했다.",
+              },
+            ],
+          },
         },
         {
           word: "inspect",
@@ -232,9 +250,27 @@
         },
         {
           word: "extract",
-          hint: "1.추출하다,빼내다",
-          comment: `We need to extract valuable information from the data.<br>
-                    (우리는 그 데이터에서 가치 있는 정보를 추출해야 합니다.)`,
+          hint: "1.추출하다,뽑아내다",
+          comment: {
+            title: "extract",
+            parts: [
+              {
+                type: "동사 (extract)",
+                example: "We need to extract valuable information from the data.",
+                translation: "우리는 그 데이터에서 가치 있는 정보를 추출해야 합니다.",
+              },
+              {
+                type: "명사 (extraction)",
+                example: "Oil extraction is a major industry in the region.",
+                translation: "석유 추출은 이 지역의 주요 산업이다.",
+              },
+              {
+                type: "형용사 (extractive)",
+                example: "They developed a new extractive technique.",
+                translation: "그들은 새로운 추출 기술을 개발했습니다.",
+              },
+            ],
+          },
         },
         {
           word: "execute",
@@ -782,9 +818,22 @@
         },
         {
           word: "deal",
-          hint: "1.거래하다,분배하다,다루다<br>2.거래,협상",
-          comment: `Let's make a deal.<br>
-                  (우리 거래를 합시다.)`,
+          hint: "1.거래하다,분배하다<br>2.거래,협상",
+          comment: {
+            title: "deal",
+            parts: [
+              {
+                type: "동사 (deal)",
+                example: "Let's make a deal.",
+                translation: "우리 거래를 합시다.",
+              },
+              {
+                type: "명사 (dealing)",
+                example: "Their dealings were a mystery.",
+                translation: "그들의 거래는 수수께끼였다.",
+              },
+            ],
+          },
         },
         {
           word: "evaluate",
@@ -1207,12 +1256,30 @@
         {
           word: "structure",
           hint: "1.구조,구성,체계<br>2.<생각·계획 등을>구성하다,조직화하다",
-          comment: `The building's structure is very strong.<br>
-                    (그 건물의 구조는 매우 튼튼합니다.)`,
+          comment: {
+            title: "structure",
+            parts: [
+              {
+                type: "명사 (structure)",
+                example: "The building's structure is very strong.",
+                translation: "그 건물의 구조는 매우 튼튼하다.",
+              },
+              {
+                type: "동사 (structure)",
+                example: "The course is structured around three parts.",
+                translation: "그 과정은 세 부분으로 구성되어 있다.",
+              },
+              {
+                type: "형용사 (Structural)",
+                example: "The company has structural problems.",
+                translation: "그 회사는 구조적인 문제를 갖고 있다.",
+              },
+            ],
+          },
         },
         {
           word: "validation",
-          hint: "1.유효성 검증,확인",
+          hint: "1.유효성검증,확인",
           comment: {
             title: "validation",
             parts: [
@@ -1336,7 +1403,24 @@
           }
         },
         { word: "criteria", hint: "기준" },
-        { word: "absence", hint: "부재, 결석" },
+        { word: "absent", 
+          hint: "1.결석한,부재한", 
+          comment: {
+            title: "absent",
+            parts: [
+              {
+                type: "동사 (absent)",
+                example: "Students may not absent themselves.",
+                translation: "학생들은 결석해서는 안 된다.",
+              },
+              {
+                type: "명사 (absence)",
+                example: "Her absence was very noticeable.",
+                translation: "그녀의 부재는 매우 눈에 띄었다.",
+              },
+            ],
+          },
+        },
         {
           word: "clear",
           hint: "1.맑은,투명한,명확한<br>2.장애물,방해물을 없애 깨끗한",
@@ -1510,22 +1594,40 @@
         {
           word: "cryptographic",
           hint: "1.암호화,암호기술",
-          comment: `A cryptographic key is essential for decryption.<br>
-                    (암호 키는 복호화를 위해 필수적입니다.)`,
+          comment: {
+            title: "cryptographic",
+            parts: [
+              {
+                type:"명사 (cryptographic)",
+                example:"A cryptographic key is essential for decryption.",
+                translation:"암호 키는 복호화를 위해 필수적입니다."
+              }
+            ]
+          }
         },
         {
           word: "exempt",
           hint: "1.면제된,~로부터 면제하다",
-          comment: `1. 동사(to exmept)<br>
-                      She was exempted from the final exam due to her high grades.<br>
-                      (그녀는 높은 성적 덕분에 기말고사에서 면제되었다.)<br>
-                    2. 형용상(Exempt)<br>
-                      He is exempt from military service due to a medical condition.<br>
-                      (그는 건강상의 이유로 군 복무가 면제됩니다.)<br>
-                    2. 명사 (An exempt)<br>
-                      The new law provides several benefits for the exempts.<br>
-                      (새로운 법은 면제된 사람들에게 여러 혜택을 제공합니다.)<br>
-                    `,
+          comment: {
+            title: "exempt",
+            parts: [
+              {
+                type: "동사 (to exmept)",
+                example: "She was exempted from the final exam due to her high grades.",
+                translation: "그녀는 높은 성적 덕분에 기말고사에서 면제되었다.",
+              },
+              {
+                type: "형용상 (Exempt)",
+                example: "He is exempt from military service due to a medical condition.",
+                translation: "그는 건강상의 이유로 군 복무가 면제됩니다.",
+              },
+              {
+                type: "명사 (An exempt)",
+                example: "The new law provides several benefits for the exempts.",
+                translation: "새로운 법은 면제된 사람들에게 여러 혜택을 제공합니다.",
+              },
+            ],
+          },
         },
         {
           word: "original",
@@ -1862,8 +1964,16 @@
         {
           word: "flexible",
           hint: "1.유연한,융통성 있는",
-          comment: `My schedule is flexible, so I can meet you anytime.<br>
-                    (제 일정은 융통성이 있어서, 아무 때나 만날 수 있어요.)`,
+          comment: {
+            title: "flexible",
+            parts: [
+              {
+                type: "명사 (flexible)",
+                example: "Be flexible with your schedule.",
+                translation: "일정을 유연하게 잡으세요.",
+              },
+            ],
+          },
         },
         {
           word: "allows",
@@ -1945,9 +2055,27 @@
         },
         {
           word: "Suggest",
-          hint: "1.(부드러운)제안하다,시사하다",
-          comment: `I suggest we go to a movie tonight.<br>
-                    (오늘 밤에 영화 보러 가는 것을 제안해요.)`,
+          hint: "1.제안하다(부드러운),시사하다",
+          comment: {
+            title: "Suggest",
+            parts: [
+              {
+                type: "동사 (suggest)",
+                example: "I suggest we go to a movie tonight.",
+                translation: "오늘 밤에 영화 보러 가는 것을 제안해요.",
+              },
+              {
+                type: "명사 (suggestion)",
+                example: "I have a suggestion for you",
+                translation: "너에게 제안할 것이 있다.",
+              },
+              {
+                type: "형용사 (suggestive)",
+                example: "The film's ending was very suggestive.",
+                translation: "그 영화의 결말은 매우 암시적이었다.",
+              },
+            ],
+          },
         },
         {
           word: "propose",
@@ -2122,10 +2250,88 @@
             ]
           }
         },
-
-        // effect - 영향
-        // turned off - 전원이 꺼진 상태
-
+        { word: "effect",
+          hint: "1.결과,영향,효과",
+          comment: {
+            title: "effect",
+            parts: [
+              {
+                type: "명사 (effect)",
+                example: "The medicine had a positive effect on him.",
+                translation: "그 약은 그에게 긍정적인 효과가 있었다.",
+              },
+              {
+                type: "동사 (affect)",
+                example: "The weather will affect our travel plans.",
+                translation: "날씨가 우리의 여행 계획에 영향을 미칠 것이다",
+              },
+              {
+                type: "형용사 (effective)",
+                example: "This medicine is highly effective for pain.",
+                translation: "이 약은 통증에 매우 효과적이다.",
+              },
+              {
+                type: "부사 (effectively)",
+                example: "She can work effectively under pressure.",
+                translation: "그녀는 압박 속에서도 효과적으로 일할 수 있다.",
+              },
+            ]
+          }
+        },
+        { word: "turned off",
+          hint: "1.꺼진<br>2.흥미를 잃은",
+          comment: {
+            title: "turned off",
+            parts: [
+              {
+                type: "동사구 (turned off)",
+                example: "He turned off the lights and went to bed.",
+                translation: "그는 불을 끄고 잠자리에 들었다.",
+              },
+              {
+                type: "동사구 (turned her off)",
+                example: "That rude comment really turned her off.",
+                translation: "그 무례한 발언은 그녀의 흥미를 완전히 떨어뜨렸다.",
+              },
+            ]
+          }
+        },
+        { word: "transact",
+          hint: "1.거래하다",
+          comment: {
+            title: "transact",
+            parts: [
+              {
+                type: "동사 (transact)",
+                example: "He transact s business with a large number of stores",
+                translation: "그는 많은 상점과 거래를 하고 있다.",
+              },
+              {
+                type: "명사 (transaction)",
+                example: "He completed the transaction successfully.",
+                translation: "그는 거래를 성공적으로 완료했다.",
+              },
+            ]
+          }
+        },
+        { word: "quantify",
+          hint: "1.양을 정하다,수량화하다",
+          comment: {
+            title: "quantify",
+            parts: [
+              {
+                type: "동사 (quantify)",
+                example: "It is difficult to quantify the soul.",
+                translation: "영혼을 정량화하는 것은 어렵습니다.",
+              },
+              {
+                type: "명사 (quantity)",
+                example: "I prefer quality to quantity",
+                translation: "양보다 질을 택한다.",
+              },
+          ]
+          }
+        },
 
         // { word: "represent",
         //   hint: "1.대표하다,나타낸다",
@@ -2150,6 +2356,7 @@
         //     ]
         //   }
         // },
+
       ];
 
       // 게임 상태를 저장할 변수들
