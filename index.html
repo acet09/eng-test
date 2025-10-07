@@ -164,7 +164,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 25.09.30</span>
+        <span>last update - 25.10.07</span>
       </footer>
     </div>
     <script>
@@ -180,7 +180,7 @@
                 type: "동사 (To represent)",
                 example:
                   "He was chosen to represent his country at the Olympics.",
-                translation: "그는 올림픽에서 조국을 대표하도록 선발되었다.",
+                translation: "그는 올림픽에 나갈 국가대표로 선발되었다.",
               },
               {
                 type: "형용사 (Representative)",
@@ -188,7 +188,7 @@
                 translation: "이 작품은 그녀의 스타일을 대표합니다.",
               },
               {
-                type: "명사 (A representative)",
+                type: "명사 (representative)",
                 example: "Each state sends representatives to the event.",
                 translation: "각 주에서는 행사에 대표를 파견합니다.",
               },
@@ -844,8 +844,21 @@
         {
           word: "environment",
           hint: "1.환경<br>2.주위의 상황,분위기",
-          comment: `A good working environment is important for productivity.<br>
-                    (좋은 업무 환경은 생산성에 중요하다.)`,
+          comment: {
+            title: "environment",
+            parts: [
+              {
+                type: "명사 (environment)",
+                example: "A good working environment can assist in productivity.",
+                translation: "좋은 업무 환경은 생산성에 도움이 될 수 있다.",
+              },              
+              {
+                type: "형용사 (environmental)",
+                example: "We face serious environmental challenges.",
+                translation: "우리는 심각한 환경적인 문제에 직면해 있습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "indicate",
@@ -911,9 +924,22 @@
         },
         {
           word: "manipulate",
-          hint: "1.조종하다,다루다<br>2.(속여서)교묘하게 조작한다,",
-          comment: `The news was accused of manipulating public opinion.<br>
-                    (그 뉴스는 대중의 의견을 조작했다는 비난을 받았다.)`,
+          hint: "1.조종하다,조작한다(기만)",
+          comment: {
+            title: "manipulate",
+            parts: [
+              {
+                type: "동사 (manipulate)",
+                example: "He can manipulate the complex tool easily.",
+                translation: "그는 복잡한 도구를 쉽게 다룰 수 있습니다.",
+              },              
+              {
+                type: "명사 (manipulation)",
+                example: "Data manipulation requires specific skills.",
+                translation: "데이터 조작은 특정한 기술을 필요로 합니다.",
+              },                     
+            ]
+          }
         },
         {
           word: "duplicate",
@@ -990,9 +1016,22 @@
         },
         {
           word: "submit",
-          hint: "1.제출하다",
-          comment: `Please submit your application by Friday.<br>
-                    (금요일까지 신청서를 제출해 주세요.)`,
+          hint: "1.제출하다.항복하다",
+          comment: {
+            title: "submit",
+            parts: [
+              {
+                type: "동사 (submit)",
+                example: "Please submit your application by Friday.",
+                translation: "금요일까지 신청서를 제출해 주세요.",
+              },              
+              {
+                type: "명사 (submisstion)",
+                example: "A submission is a move that forces a tap out.",
+                translation: "서브미션은 탭아웃을 강제하는 기술입니다.",
+              },              
+            ]
+          }
         },
         {
           word: "analyze",
@@ -1081,8 +1120,26 @@
         {
           word: "generate",
           hint: "1.생성하다,만들어내다,발생시키다",
-          comment: `Good ideas don't just happen; you have to work to generate them.<br>
-                    (좋은 아이디어는 그냥 생기는 것이 아니라, 그것을 만들어내기 위해 노력해야 한다.)`,
+          comment: {
+            title: "generate",
+            parts: [
+              {
+                type: "동사 (generate)",
+                example: "Good ideas don't just happen; you have to work to generate them.",
+                translation: "좋은 아이디어는 그냥 생기는 것이 아니라, 그것을 만들어내기 위해 노력해야 한다.",
+              },              
+              {
+                type: "명사 (generation)",
+                example: "The younger generation uses the internet a lot",
+                translation: "젊은 세대는 인터넷을 많이 사용합니다.",
+              },              
+              {
+                type: "명사 (generator)",
+                example: "We need a backup power generator.",
+                translation: "우리는 예비 발전 발생기가 필요합니다.",
+              },              
+            ]
+          }
         },
         {
           word: "declare",
@@ -1298,10 +1355,28 @@
         },
         { word: "illegal", hint: "불법" },
         {
-          word: "computation",
-          hint: "1.산술,계산<br>2.정보 처리,논리적 연산<br>3.알고리즘,컴퓨터 공학",
-          comment: `Computers perform millions of computations every second.<br>
-                    (컴퓨터는 매 초 수백만 개의 계산을 수행합니다.)`,
+          word: "compute",
+          hint: "1.계산하다,산출하다",
+          comment: {
+            title: "compute",
+            parts: [
+              {
+                type: "동사 (compute)",
+                example: "The system can compute complex data quickly.",
+                translation: "그 시스템은 복잡한 데이터를 빠르게 계산할 수 있습니다.",
+              },              
+              {
+                type: "명사 (Computation)",
+                example: "Errors in computation led to a mistake.",
+                translation: "계산상의 오류가 실수로 이어졌습니다.",
+              },              
+              {
+                type: "형용사 (computational)",
+                example: "This requires advanced computational skills.",
+                translation: "이것은 고도의 계산 능력을 필요로 합니다.",
+              },              
+            ]
+          }
         },
         {
           word: "mechanism",
@@ -1358,26 +1433,6 @@
           hint: "1.같이,동시에,한편으로는",
           comment: `The job is demanding, but at the same time, it is very rewarding.<br>
                     (그 일은 힘들지만, 동시에 매우 보람이 있다.)`,
-        },
-        {
-          word: "can be",
-          hint: "1.~일 수 있다,~할 수 있다",
-          comment: {
-            title: "can be",
-            parts: [
-              {
-                type: "조동사+be동사 (can be)",
-                example: "The weather can be unpredictable in the mountains.",
-                translation: "산에서는 날씨가 예측 불가능할 수 있습니다.",
-              },              
-            ]
-          }
-        },
-        {
-          word: "to be",
-          hint: "1.~되는 것, ~되기 위해",
-          comment:
-            "Her goal is to be happy.<br>(그녀의 목표는 행복하게 되는 것이다.)",
         },
         { word: "associate", 
           hint: "1.연상시키다,어울리다<br>2.동료,준회원,준~", 
@@ -1509,8 +1564,21 @@
         {
           word: "reduce",
           hint: "1.줄이다",
-          comment: `The company decided to reduce its costs.<br>
-                    (회사는 비용을 줄이기로 결정했습니다.)`,
+          comment: {
+            title: "reduce",
+            parts: [
+              {
+                type: "동사 (reduce)",
+                example: "The price was reduced by 10%.",
+                translation: "가격이 10% 할인되었습니다.",
+              },              
+              {
+                type: "명사 (reduction)",
+                example: "There was a significant reduction in cost.",
+                translation: "비용에 상당한 감소가 있었습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "subtract",
@@ -1706,9 +1774,27 @@
         },
         {
           word: "special",
-          hint: "1.뛰어난,중요한,특별한(긍정적)",
-          comment: `This is a special occasion, so we should celebrate.<br>
-                    (오늘은 특별한 날이니, 우리가 축하해야 해.)`,
+          hint: "1.특수한,특별한(긍정적)",
+          comment: {
+            title: "special",
+            parts: [
+              {
+                type: "형용사 (special)",
+                example: "He has a special skill in coding.",
+                translation: "그는 코딩에 특출난 재능을 가지고 있어요.",
+              },              
+              {
+                type: "명사 (special)",
+                example: "The store is running a special.",
+                translation: "그 가게는 특별 할인 행사를 진행 중이에요.",
+              },              
+              {
+                type: "부사 (specially)",
+                example: "I came here specially to see you.",
+                translation: "저는 당신을 보기 위해 특별히 이곳에 왔어요.",
+              },              
+            ]
+          }
         },
         { word: "with a", hint: "~을 사용해서" },
         { word: "elapsed Time", hint: "경과 시간" },
@@ -2010,12 +2096,6 @@
           hint: "1.결정적인, 중대한<br>2.성패를 좌우(cross)할 만큼",
           comment: `The final exam is a crucial part of your grade.<br>
                     (기말고사는 당신의 성적에서 매우 중요한 부분입니다.)`,
-        },
-        {
-          word: "way to",
-          hint: "1.~하는 방법",
-          comment: `That's the only way to solve the problem.<br>
-                    (그것이 그 문제를 해결할 수 있는 유일한 방법이야.)`,
         },
         {
           word: "declare",
