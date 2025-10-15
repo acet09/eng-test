@@ -126,6 +126,7 @@
         color: gray;
         text-align: center;
         padding-top: 70px;
+        margin: 0 auto;
       }
     </style>
   </head>
@@ -164,7 +165,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 25.10.07</span>
+        <span>last update - 25.10.16</span>
       </footer>
     </div>
     <script>
@@ -209,7 +210,7 @@
               {
                 type: "형용사 (Examined)",
                 example: "The examined report is ready.",
-                translation: "검토된 보고서가 준비되었다.)",
+                translation: "검토된 보고서가 준비되었다.",
               },
               {
                 type: "명사 (Examination)",
@@ -281,17 +282,17 @@
               {
                 type: "동사 (execute)",
                 example: "The command will execute the program.",
-                translation: "(그 명령은 프로그램을 실행할 것이다.)",
+                translation: "그 명령은 프로그램을 실행할 것이다.",
               },
               {
                 type: "명사/과정,결과 (execution)",
                 example: "The project's execution was flawless.",
-                translation: "(그 프로젝트의 실행은 완벽했다.)",
+                translation: "그 프로젝트의 실행은 완벽했다.",
               },
               {
                 type: "명사/경영진,임원 (executive)",
                 example: "She is a senior executive at a tech company.",
-                translation: "(그녀는 기술 회사의 고위 임원이다.)",
+                translation: "그녀는 기술 회사의 고위 임원이다.",
               },
             ],
           },
@@ -299,8 +300,26 @@
         {
           word: "exist",
           hint: "1.존재하다,실재하다",
-          comment: `I think, therefore I exist. (Cogito, ergo sum.)<br>
-                    (나는 생각한다, 그러므로 나는 존재한다.)`,
+          comment: {
+            title: "exist",
+            parts: [
+              {
+                type: "동사 (exist)",
+                example: "Do other intelligent life forms exist in the universe?",
+                translation: "우주에 다른 지적 생명체가 존재할까요?",
+              },              
+              {
+                type: "명사 (existence)",
+                example: "Her mere existence makes me happy",
+                translation: "그녀의 존재만으로도 저는 행복합니다.",
+              },              
+              {
+                type: "형용사 (existing)",
+                example: "We must upgrade the existing system.",
+                translation: "우리는 현재 존재하는 시스템을 업그레이드해야 합니다.",
+              },              
+            ]
+          }
         },
         {
           word: "supply",
@@ -317,17 +336,17 @@
               {
                 type: "동사 (provide)",
                 example: "The company will provide food for the meeting.",
-                translation: "(회사가 회의를 위해 음식을 제공할 것이다.)",
+                translation: "회사가 회의를 위해 음식을 제공할 것이다.",
               },
               {
                 type: "명사/제공자 (provider)",
                 example: "She works for an internet service provider.",
-                translation: "(그녀는 인터넷 서비스 업체에서 일한다.)",
+                translation: "그녀는 인터넷 서비스 업체에서 일한다.",
               },
               {
                 type: "명사/규정 (provision)",
                 example: "The law includes a provision for safety.",
-                translation: "(그 법은 안전에 대한 규정을 포함하고 있다.)",
+                translation: "그 법은 안전에 대한 규정을 포함하고 있다.",
               },
             ],
           },
@@ -397,7 +416,7 @@
                 example:
                   "Serialization is the process of converting an object into a stream of bytes.",
                 translation:
-                  "(직렬화는 객체를 바이트 스트림으로 변환하는 과정입니다.)",
+                  "직렬화는 객체를 바이트 스트림으로 변환하는 과정입니다.",
               },
             ],
           },
@@ -411,12 +430,12 @@
               {
                 type:"동사 (Initialize)",
                 example:"The program will initialize the data.",
-                translation:"(그 프로그램이 데이터를 초기화할 것입니다.)"
+                translation:"그 프로그램이 데이터를 초기화할 것입니다."
               },
               {
                 type:"명사 (Initialization)",
                 example:"The system requires a full initialization.",
-                translation:"(시스템은 완전한 초기화를 필요로 한다.)"
+                translation:"시스템은 완전한 초기화를 필요로 한다."
               },
             ]
           },
@@ -455,12 +474,12 @@
               {
                 type: "명사 (Response)",
                 example: "The company's response to the crisis was very quick.",
-                translation: "(그 회사의 위기 대응은 매우 신속했다.)",
+                translation: "그 회사의 위기 대응은 매우 신속했다.",
               },
               {
                 type: "동사 (Respond)",
                 example: "Please respond to my email by tomorrow.",
-                translation: "(내일까지 내 이메일에 응답해 주세요.)",
+                translation: "내일까지 내 이메일에 응답해 주세요.",
               },
             ],
           },
@@ -538,19 +557,19 @@
               {
                 type: "형용사 (available)",
                 example: "The new product is now available in stores.",
-                translation: "(새로운 제품이 이제 매장에서 이용 가능하다.)",
+                translation: "새로운 제품이 이제 매장에서 이용 가능하다.",
               },
               {
                 type: "명사 (availability)",
                 example:
                   "We need to check the availability of the meeting room.",
-                translation: "(우리는 회의실의 이용 가능성을 확인해야 한다.)",
+                translation: "우리는 회의실의 이용 가능성을 확인해야 한다.",
               },
               {
                 type: "동사/이용하다,도움이 되다 (avail)",
                 example: "The doctor's advice will avail him little.",
                 translation:
-                  "(그 의사의 조언은 그에게 거의 도움이 되지 않을 것이다.)",
+                  "그 의사의 조언은 그에게 거의 도움이 되지 않을 것이다.",
               },
             ],
           },
@@ -618,8 +637,31 @@
         {
           word: "equal",
           hint: "1.완전히 같은,동등한<br>2.수량,크기,가치",
-          comment: `All people are equal under the law.<br>
-                    (모든 사람은 법 앞에서 평등하다.)`,
+          comment: {
+            title: "equal",
+            parts: [
+              {
+                type: "형용사 (equal)",
+                example: "All people are entitled to equal rights and respect.",
+                translation: "모든 사람은 동등한 권리와 존중을 받을 자격이 있습니다.",
+              },              
+              {
+                type: "동사 (equal)",
+                example: "Five plus five equals ten.",
+                translation: "5 더하기 5는 10과 같습니다.",
+              },              
+              {
+                type: "명사 (equal)",
+                example: "She is his equal in talent and skill.",
+                translation: "그녀는 재능과 기술 면에서 그와 동등한 사람입니다.",
+              },              
+              {
+                type: "부사 (equally)",
+                example: "Divide the cake equally among the children.",
+                translation: "아이들에게 케이크를 균등하게 나누어 주세요.",
+              },              
+            ]
+          }
         },
         {
           word: "compare",
@@ -630,17 +672,17 @@
               {
                 type: "동사 (compare)",
                 example: "Let's compare the prices of the two cameras.",
-                translation: "(두 카메라의 가격을 비교해 봅시다.)",
+                translation: "두 카메라의 가격을 비교해 봅시다.",
               },
               {
                 type: "명사 (comparison)",
                 example: "There is no comparison between the two cars.",
-                translation: "(그 두 차는 비교할 수 없다.)",
+                translation: "그 두 차는 비교할 수 없다.",
               },
               {
                 type: "형용사 (comparable)",
                 example: "Our sales figures are comparable to last year's.",
-                translation: "(우리 판매 수치는 작년과 비교할 만하다.)",
+                translation: "우리 판매 수치는 작년과 비교할 만하다.",
               },
             ],
           },
@@ -654,7 +696,7 @@
               {
                 type: "Different (형용사)",
                 example: "My new phone is very different from my old one.",
-                translation: "(내 새 휴대폰은 예전 것과 매우 다릅니다.)",
+                translation: "내 새 휴대폰은 예전 것과 매우 다릅니다.",
               },
             ],
           },
@@ -729,17 +771,17 @@
               {
                 type:"동사 (Transform)",
                 example:"The internet transformed how we communicate.",
-                translation:"(인터넷은 우리가 소통하는 방식을 변화시켰다.)"
+                translation:"인터넷은 우리가 소통하는 방식을 변화시켰다."
               },
               {
                 type:"명사 (Transformation)",
                 example:"The caterpillar's transformation into a butterfly is amazing.",
-                translation:"(애벌레가 나비로 변태하는 과정은 놀랍습니다.)"
+                translation:"애벌레가 나비로 변태하는 과정은 놀랍습니다."
               },
               {
                 type:"(Transformative)",
                 example:"This technology is truly transformative.",
-                translation:"(이 기술은 정말로 혁신적이다.)"
+                translation:"이 기술은 정말로 혁신적이다."
               },
             ]
           }
@@ -753,17 +795,17 @@
               {
                 type: "동사 (Define)",
                 example: `Please define the term "sustainability."`,
-                translation: "(지속 가능성이라는 용어를 정의해 주세요.)",
+                translation: "지속 가능성이라는 용어를 정의해 주세요.",
               },
               {
                 type: "명사 (definition)",
                 example: "The dictionary provides a precise definition.",
-                translation: "(사전은 정확한 정의를 제공합니다.)",
+                translation: "사전은 정확한 정의를 제공합니다.",
               },
               {
                 type: "형용사 (defined)",
                 example: "The picture has sharp, defined edges.",
-                translation: "(그 사진은 가장자리가 뚜렷하고 선명하다.)",
+                translation: "그 사진은 가장자리가 뚜렷하고 선명하다.",
               },
             ],
           },
@@ -887,12 +929,12 @@
               {
                 type: "전치사/접속사 (Until)",
                 example: "We worked on the project until late at night.",
-                translation: "(우리는 밤늦게까지 그 프로젝트 작업을 했다.)",
+                translation: "우리는 밤늦게까지 그 프로젝트 작업을 했다.",
               },
               {
                 type: "전치사/접속사 (Until)",
                 example: "We stayed there until Monday.",
-                translation: "(우리는 월요일이 되기 까지 그곳에 머물렀다.)",
+                translation: "우리는 월요일이 되기 까지 그곳에 머물렀다.",
               },
             ],
           },
@@ -950,17 +992,17 @@
               {
                 type: "동사 (duplicate)",
                 example: "Please duplicate this key for me.",
-                translation: "(이 열쇠를 복제해 주세요.)",
+                translation: "이 열쇠를 복제해 주세요.",
               },
               {
                 type: "명사 (duplicate)",
                 example: "I have a duplicate of the original document.",
-                translation: "(원본 서류의 사본을 가지고 있습니다.)",
+                translation: "원본 서류의 사본을 가지고 있습니다.",
               },
               {
                 type: "형용사 (duplicate)",
                 example: "I found a duplicate entry in the database.",
-                translation: "(데이터베이스에서 중복된 항목을 찾았다.)",
+                translation: "데이터베이스에서 중복된 항목을 찾았다.",
               },
             ],
           },
@@ -980,17 +1022,17 @@
               {
                 type: "동사 (correct)",
                 example: "He needs to correct his spelling mistakes.",
-                translation: "(그는 철자 오류를 수정해야 한다.)",
+                translation: "그는 철자 오류를 수정해야 한다.",
               },
               {
                 type: "형용사 (correct)",
                 example: "The answer is not correct.",
-                translation: "(그 답은 정확하지 않다.)",
+                translation: "그 답은 정확하지 않다.",
               },
               {
                 type: "부사 (correctly)",
                 example: "Please spell my name correctly.",
-                translation: "(제 이름을 정확하게 철자해 주세요.)",
+                translation: "제 이름을 정확하게 철자해 주세요.",
               },
             ],
           },
@@ -1004,12 +1046,12 @@
               {
                 type: "동사 (send)",
                 example: "Please send the file to me by email.",
-                translation: "(그 파일을 이메일로 보내주세요.)",
+                translation: "그 파일을 이메일로 보내주세요.",
               },
               {
                 type: "sent (과거형)",
                 example: "The company sent him to work abroad.",
-                translation: "(회사는 그를 해외에 근무하도록 보냈다.)",
+                translation: "회사는 그를 해외에 근무하도록 보냈다.",
               },
             ],
           },
@@ -1053,17 +1095,17 @@
                 example:
                   "The website requires two-factor authentication for extra security.",
                 translation:
-                  "(이 웹사이트는 추가 보안을 위해 2단계 인증을 요구합니다.)",
+                  "이 웹사이트는 추가 보안을 위해 2단계 인증을 요구합니다.",
               },
               {
                 type: "동사 (authenticate)",
                 example: "The system will authenticate your login details.",
-                translation: "(시스템이 당신의 로그인 정보를 인증할 것이다.)",
+                translation: "시스템이 당신의 로그인 정보를 인증할 것이다.",
               },
               {
                 type: "명사 (authenticator)",
                 example: "You need an authenticator app for this login.",
-                translation: "(이 로그인을 위해 인증자 앱이 필요하다.)",
+                translation: "이 로그인을 위해 인증자 앱이 필요하다.",
               },
             ],
           },
@@ -1077,18 +1119,18 @@
               {
                 type: "명사 (authorization)",
                 example: "You need special authorization to enter this area.",
-                translation: "(이 구역에 들어가려면 특별한 권한이 필요합니다.)",
+                translation: "이 구역에 들어가려면 특별한 권한이 필요합니다.",
               },
               {
                 type: "동사 (authorize)",
                 example: "The company can authorize this special purchase.",
-                translation: "(회사가 이 특별 구매를 승인할 수 있습니다.)",
+                translation: "회사가 이 특별 구매를 승인할 수 있습니다.",
               },
               {
                 type: "형용사 (authorized)",
                 example: "Only authorized personnel can enter this area.",
                 translation:
-                  "(오직 권한을 부여받은 직원만 이 구역에 들어갈 수 있습니다.)",
+                  "오직 권한을 부여받은 직원만 이 구역에 들어갈 수 있습니다.",
               },
             ],
           },
@@ -1102,8 +1144,26 @@
         {
           word: "save",
           hint: "1.절약하는,구하는,보존하는<br>2.손실로부터 잃지 않도록 보존",
-          comment: `Saving energy is important for the environment.<br>
-                    (에너지를 절약하는 것은 환경에 중요하다.)`,
+          comment: {
+            title: "save",
+            parts: [
+              {
+                type: "동사 (save)",
+                example: "Please save your work before closing the file.",
+                translation: "파일을 닫기 전에 작업을 저장하세요.",
+              },              
+              {
+                type: "명사 (save)",
+                example: "The goalie made a fantastic save in the last minute.",
+                translation: "골키퍼가 마지막 순간에 환상적인 선방을 했습니다.",
+              },              
+              {
+                type: "형용사 (safe)",
+                example: "Is it safe to walk alone at night?",
+                translation: "밤에 혼자 걷는 것은 안전한가요?",
+              },              
+            ]
+          }
         },
         {
           word: "occur",
@@ -1418,15 +1478,32 @@
         },
         {
           word: "expect",
-          hint: "1.예상하다,기대하다,바라다",
-          comment: `I expect him to arrive on time.<br>
-                    (나는 그가 제시간에 도착할 거라고 예상합니다.)`,
-        },
-        {
-          word: "unexpected",
-          hint: "1.예상치 못한,뜻밖의",
-          comment: `The team's victory was completely unexpected.<br>
-                    (그 팀의 승리는 완전히 예상치 못한 것이었다.)`,
+          hint: "1.예상하다,기대하다",
+          comment: {
+            title: "expect",
+            parts: [
+              {
+                type: "동사 (expect)",
+                example: "I expect a good result from thos hard work.",
+                translation: "이 노력으로 좋은 결과를 기대합니다.",
+              },              
+              {
+                type: "명사 (expectation)",
+                example: "Our expectations were met by the performance.",
+                translation: "그 공연은 우리의 기대를 충족시켰습니다.",
+              },              
+              {
+                type: "형용사 (expected)",
+                example: "The rain started at the expected time.",
+                translation: "비는 예상했던 시간에 시작했습니다.",
+              },              
+              {
+                type: "부사 (unexpectedly)",
+                example: "He called me unexpectedly late last night.",
+                translation: "그는 어젯밤 늦게 예상치 않게 제게 전화했습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "same time",
@@ -2111,15 +2188,56 @@
         },
         {
           word: "complex",
-          hint: "1.복잡한<br>2.이해하거나 해결하기 어려운 상태",
-          comment: `This is a very complex issue with no easy solution.<br>
-                    (이것은 쉬운 해결책이 없는 매우 복잡한 문제입니다.)`,
+          hint: "1.복잡한,복합 건물/단지<br>2.이해하거나 해결하기 어려운 상태",
+          comment: {
+            title: "complex",
+            parts: [
+              {
+                type: "형용사 (complex)",
+                example: "This is a very complex issue with no easy solution.",
+                translation: "이것은 쉬운 해결책이 없는 매우 복잡한 문제입니다.",
+              },              
+              {
+                type: "명사 (complex)",
+                example: "The sports complex has a pool and a gym.",
+                translation: "그 스포츠 단지에는 수영장과 체육관이 있습니다.",
+              },              
+              {
+                type: "명사 (complexity)",
+                example: "I was surprised by the complexity of the task.",
+                translation: "저는 그 과제의 복잡성에 놀랐습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "modern",
-          hint: "1.현대의, 근대의, 진보적<br>2.19세기 말~20세기 초<br>3.새로운 방식,사상,양식",
-          comment: `She prefers modern art to classical art.<br>
-                    (그녀는 고전 미술보다 현대 미술을 선호한다.)`,
+          hint: "1.현대의,근대의,최신식<br>2.19세기 말~20세기 초",
+          comment: {
+            title: "modern",
+            parts: [
+              {
+                type: "형용사 (modern)",
+                example: "I prefer modern art over classical paintings.",
+                translation: "저는 고전 회화보다 현대 미술을 선호합니다.",
+              },              
+              {
+                type: "명사 (modernity)",
+                example: "The city embraced modernity and growth.",
+                translation: "그 도시는 현대성과 성장을 받아들였습니다.",
+              },              
+              {
+                type: "동사 (modernize)",
+                example: "They plan to modernize the old building.",
+                translation: "그들은 오래된 건물을 현재화할 계획입니다.",
+              },              
+              {
+                type: "부사 (modernly)",
+                example: "The house was decorated very modernly.",
+                translation: "그 집은 매우 현대적으로 장식되었습니다.",
+              },              
+            ]
+          }
         },
         {
           word: "upcoming",
