@@ -165,7 +165,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 25.10.16</span>
+        <span>last update - 25.10.18</span>
       </footer>
     </div>
     <script>
@@ -539,8 +539,26 @@
         {
           word: "variable",
           hint: "1.변수,변하기 쉬운",
-          comment: `The weather in this region is highly variable.<br>
-                    (이 지역의 날씨는 매우 변덕스럽다.)`,
+          comment: {
+            title: "variable",
+            parts: [
+              {
+                type: "보어/형용사 (variable)",
+                example: "The weather in this region is highly variable.",
+                translation: "이 지역의 날씨는 매우 변덕스럽다.",
+              },              
+              {
+                type: "동사 (vary)",
+                example: "The prices of flights always vary by season.",
+                translation: "항공료는 계절에 따라 항상 달라진다.",
+              },              
+              {
+                type: "명사 (variation)",
+                example: "We noticed a small variation in the test results.",
+                translation: "우리는 시험 결과에서 작은 변동을 발견했다.",
+              },              
+            ]
+          }
         },
         {
           word: "value",
@@ -631,8 +649,21 @@
         {
           word: "same",
           hint: "1.동일한<br>2.구분할 필요 없을만큼 똑같음",
-          comment: `He said the same thing as you did.<br>
-                    (그는 네가 말한 것과 똑같은 것을 말했어.)`,
+          comment: {
+            title: "same",
+            parts: [
+              {
+                type: "형용사 (same)",
+                example: "We bought the same brand of coffee yesterday afternoon.",
+                translation: "우리는 어제 오후에 같은 상표의 커피를 샀다.",
+              },              
+              {
+                type: "대명사 (same)",
+                example: "She always orders the same at the restaurant.",
+                translation: "그녀는 식당에서 항상 똑같은 것을 주문한다.",
+              },              
+            ]
+          }
         },
         {
           word: "equal",
@@ -941,9 +972,27 @@
         },
         {
           word: "process",
-          hint: "1.처리하다,진행하다<br>2.과정,절차",
-          comment: `Learning a language is a slow process.<br>
-                    (언어를 배우는 것은 느린 과정이다.)`,
+          hint: "1.과정,절차<br>2.처리하다,진행하다",
+          comment: {
+            title: "process",
+            parts: [
+              {
+                type: "동사 (process)",
+                example: "Learning a language is a slow process.",
+                translation: "언어를 배우는 것은 느린 과정이다.",
+              },              
+              {
+                type: "명사 (process)",
+                example: "The computer will quickly proocess the complex data.",
+                translation: "컴퓨터가 복잡한 데이터를 빠르게 처리할 것입니다.",
+              },              
+              {
+                type: "형용사 (processing)",
+                example: "Your application is still in the processing stage now.",
+                translation: "당신의 신청서는 현재 여전히 처리단계에 있다.",
+              },              
+            ]
+          }
         },
         {
           word: "handle",
@@ -1143,7 +1192,7 @@
         },
         {
           word: "save",
-          hint: "1.절약하는,구하는,보존하는<br>2.손실로부터 잃지 않도록 보존",
+          hint: "1.보존하는,구하는,절약하는<br>2.손실로부터 잃지 않도록 보존",
           comment: {
             title: "save",
             parts: [
@@ -1204,8 +1253,26 @@
         {
           word: "declare",
           hint: "1.선언하다,발표하다<br>2.신고하다",
-          comment: `You must make a declaration before using a variable.<br>
-                    (변수를 사용하기 전에 선언을 해야 한다.)`,
+          comment: {
+            title: "declare",
+            parts: [
+              {
+                type: "동사 (declare)",
+                example: "Please declear all goods to the officer now.",
+                translation: "지금 모든 물품을 직원에게 신고해주십시오.",
+              },              
+              {
+                type: "명사 (declarer)",
+                example: "The declarer must sign the customs form now.",
+                translation: "신고자는 지금 세관 양식에 서명해야 한다.",
+              },              
+              {
+                type: "형용사 (declarative)",
+                example: "This sentence is a decclaraative statement only.",
+                translation: "이 문장은 오직 선언적인 진술일 뿐이다.",
+              },           
+            ]
+          }
         },
         {
           word: "certain",
@@ -1505,12 +1572,6 @@
             ]
           }
         },
-        {
-          word: "same time",
-          hint: "1.같이,동시에,한편으로는",
-          comment: `The job is demanding, but at the same time, it is very rewarding.<br>
-                    (그 일은 힘들지만, 동시에 매우 보람이 있다.)`,
-        },
         { word: "associate", 
           hint: "1.연상시키다,어울리다<br>2.동료,준회원,준~", 
           comment: {
@@ -1534,7 +1595,52 @@
             ]
           }
         },
-        { word: "criteria", hint: "기준" },
+        { word: "criteria", 
+          hint: "1.(엄격한)기준,척도", 
+          comment: {
+            title: "criteria",
+            parts: [
+              {
+                type: "명사/단수 (criterion)",
+                example: "A major criterion for success is dedication.",
+                translation: "성공을 위한 주요 기준은 헌신이다.",
+              },              
+              {
+                type: "명사/복수 (criteria)",
+                example: "We must meet the strict safety criteria soon.",
+                translation: "우리는 엄격한 안전 기준을 곧 충족해야 한다.",
+              },              
+              {
+                type: "동사 (critique)",
+                example: "You should carefully critique the new design proposal.",
+                translation: "당신은 새로운 디자인 제안을 신중하게 비평해야 한다.",
+              },              
+              {
+                type: "형용사 (critical)",
+                example: "The situation is highly critical at this very moment.",
+                translation: "지금 이순간 상황은 매우 위태롭다.",
+              },              
+            ]
+          }
+        },
+        { word: "standard", 
+          hint: "1.(일반적)표준,보통의", 
+          comment: {
+            title: "standard",
+            parts: [
+              {
+                type: "명사 (standard)",
+                example: "We must maintain a high standard of quality always.",
+                translation: "우리는 항상 높은 품질 기준을 유지해야 한다.",
+              },              
+              {
+                type: "형용사 (standdard)",
+                example: "This is the standard procedure for all emergency cases.",
+                translation: "이것은 모든 긴급 상황에 대한 표준 절차이다.",
+              },              
+            ]
+          }
+        },
         { word: "absent", 
           hint: "1.결석한,부재한", 
           comment: {
