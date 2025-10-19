@@ -151,6 +151,7 @@
           placeholder="여기에 영어 단어를 입력하세요"
         />
       </div>
+
       <!-- 게임 버튼들 -->
       <div>
         <button class="button" id="submitButton">제출</button>
@@ -165,7 +166,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 25.10.18</span>
+        <span>last update - 25.10.19</span>
       </footer>
     </div>
     <script>
@@ -323,9 +324,32 @@
         },
         {
           word: "supply",
-          hint: "1.공급하다<br>2.지속적,물질적 자원 제공",
-          comment: `The company supplies fresh water to the entire city.<br>
-                    (그 회사는 도시 전체에 신선한 물을 공급한다.)`,
+          hint: "1.공급하다,제공하다<br>2.지속적,물질적 자원 제공",
+          comment: {
+            title: "supply",
+            parts: [
+              {
+                type: "동사 (supply)",
+                example: "The API must supply JSON data to the client request.",
+                translation: "API는 클라이언트 요청에 JSON 데이터를 제공해야 합니다.",
+              },              
+              {
+                type: "명사 (supply)",
+                example: "Server power supply must be stable for the database.",
+                translation: "데이터베이스를 위해 서버 전력 공급은 안정적이어야 합니다.",
+              },              
+              {
+                type: "명사 (supplier)",
+                example: "Check the data supplier for consistent input format.",
+                translation: "일관된 입력 형식을 위해 데이터 공급자를 확인하세요.",
+              },              
+              {
+                type: "형용사 (supplied)",
+                example: "Use the supplied parameters to create a query.",
+                translation: "제공된 매개변수를 사용하여 쿼리를 생성하세요.",
+              },              
+            ]
+          }
         },
         {
           word: "provide",
@@ -720,14 +744,19 @@
         },
         {
           word: "different",
-          hint: "1.서로 다른,다양한,독특한<br>2.서로 다름을 명확히 함",
+          hint: "1.다른,같지않은,독특한<br>2.서로 다름을 명확히 함",
           comment: {
             title: "different",
             parts: [
               {
-                type: "Different (형용사)",
+                type: "형용사 (Different)",
                 example: "My new phone is very different from my old one.",
                 translation: "내 새 휴대폰은 예전 것과 매우 다릅니다.",
+              },
+              {
+                type: "명사 (difference)",
+                example: "We found a critical difference in the two log files.",
+                translation: "우리는 두 로그 파일에서 결정적인 차이를 발견했습니다.",
               },
             ],
           },
@@ -740,25 +769,43 @@
         },
         {
           word: "base",
-          hint: "1.기초,기반을 두다,근거를 두다",
-          comment: `This movie is based on a true story.<br>
-                    (이 영화는 실화를 바탕으로 합니다.)`,
+          hint: "1.기초,기반<br>2.근본요소",
+          comment: {
+            title: "base",
+            parts: [
+              {
+                type: "명사 (base)",
+                example: "The SQL query selected data from the source base.",
+                translation: "SQL 쿼리는 소스 **기반(데이터베이스)**에서 데이터를 선택했습니다.",
+              },              
+              {
+                type: "동사 (base)",
+                example: "All classes must base on the Abstract Factory.",
+                translation: "모든 클래스는 추상 팩토리에 기초를 두어야 합니다.",
+              },              
+              {
+                type: "형용사 (basic)",
+                example: "This is the basic structure of a Java program.",
+                translation: "이것은 자바 프로그램의 기본적인 구조입니다.",
+              },              
+            ]
+          }
         },
         {
           word: "concur",
-          hint: "1.동의하다,동시에 발생하다",
+          hint: "1.(다수의 의견이나 판단)동의하다,의견을 같이하다.<br>2.동시에 발생하다",
           comment: {
             title: "concur",
             parts: [
               {
                 type: "동사 (concur)",
-                example: "The concur with the new plan  ",
-                translation: "그들은 새 계획에 동의합니다.",
+                example: "Multiple users may concur on a database update.",
+                translation: "다수의 사용자가 데이터베이스 업데이트에 동시에 접근할 수 있습니다.",
               },              
               {
                 type: "명사(concurrence)",
-                example: "We need their concurrence on the proposal.",
-                translation: "우리는 그들의 제안에 대한 동의가 필요합니다.",
+                example: "Concurrence in Java requires thread management.",
+                translation: "자바에서 동시성은 스레드 관리를 필요로 합니다.",
               },              
               {
                 type: "형용사(concurrent)",
@@ -947,9 +994,27 @@
         },
         {
           word: "during",
-          hint: "1.~ 동안 ,~하는 중에<br>2.어떤 특정기간, 진행되는 내내",
-          comment: `The phones were off during the meeting.<br>
-                    (회의 동안 전화기들은 꺼져 있었습니다.)`,
+          hint: "1.~ 동안 ,~하는 중에<br>2.어떤 특정기간,진행되는 내내",
+          comment: {
+            title: "during",
+            parts: [
+              {
+                type: "전치사 (during)",
+                example: "Do not drop tables during the maintenance window.",
+                translation: "유지보수 시간 동안 테이블을 삭제하지 마세요.",
+              },              
+              {
+                type: "명사 (duration)",
+                example: "Measure the query duration for optimization.",
+                translation: "최적화를 위해 쿼리 지속 시간을 측정하세요.",
+              },              
+              {
+                type: "동사 (endure)",
+                example: "The system must endure high stress loads.",
+                translation: "시스템은 높은 스트레스 부하를 견뎌야 합니다.",
+              },              
+            ]
+          }
         },
         {
           word: "until",
@@ -1057,10 +1122,28 @@
           },
         },
         {
-          word: "currently",
-          hint: "1.현재,최근에",
-          comment: `He is currently working as a freelance designer.<br>
-                    (그는 현재 프리랜서 디자이너로 일하고 있다.)`,
+          word: "current",
+          hint: "1.현재의,최근에",
+          comment: {
+            title: "current",
+            parts: [
+              {
+                type: "형용사 (current)",
+                example: "Get the current timestamp using a Java method.",
+                translation: "자바 메서드를 사용하여 현재 타임스탬프를 가져오세요.",
+              },              
+              {
+                type: "명사 (current)",
+                example: "The code checked the CPU's load current.",
+                translation: "코드는 CPU의 부하 전류를 확인했습니다.",
+              },              
+              {
+                type: "부사 (currently)",
+                example: "The server is currently running a large query.",
+                translation: "서버가 현재 대규모 쿼리를 실행 중입니다.",
+              },              
+            ]
+          }
         },
         {
           word: "correct",
@@ -1328,7 +1411,29 @@
             ]
           }
         },
-        { word: "modify", hint: "수정하다" },
+        { word: "modify", 
+          hint: "1.(일부 조정,개선하는)수정하다,변경하다",
+          comment: {
+            title: "modify",
+            parts: [
+              {
+                type: "동사 (modify)",
+                example: "Use the ALTER TABLE command to modify columns.",
+                translation: "ALTER TABLE 명령어를 사용항여 컬럼들을 수정하세요.",
+              },              
+              {
+                type: "명사 (modification)",
+                example: "The schema modification requires careful testing,",
+                translation: "스키마 수정은 신중한 테스트가 필요합니다.",
+              },              
+              {
+                type: "형용사 (modified)",
+                example: "The developer pushed a modified Java Class file.",
+                translation: "개발자는 수정된 Java 클래스 파일을 푸시했습니다.",
+              },              
+            ]
+          }
+        },
         {
           word: "reject",
           hint: "1.거절하다,거부하다<br>2.거부된 것",
@@ -1354,7 +1459,53 @@
           comment: `Can you identify the man in the photo?<br>
                     (사진 속 남자를 식별할 수 있나요?)`,
         },
-        { word: "configuration", hint: "구성, 형상, 지형, 윤곽" },
+        {
+          word: "structure",
+          hint: "1.구조,체계<br>2.고유하고 본질적이 요소,기본 틀",
+          comment: {
+            title: "structure",
+            parts: [
+              {
+                type: "명사 (structure)",
+                example: "The building's structure is very strong.",
+                translation: "그 건물의 구조는 매우 튼튼하다.",
+              },
+              {
+                type: "동사 (structure)",
+                example: "The course is structured around three parts.",
+                translation: "그 과정은 세 부분으로 구성되어 있다.",
+              },
+              {
+                type: "형용사 (Structural)",
+                example: "The company has structural problems.",
+                translation: "그 회사는 구조적인 문제를 갖고 있다.",
+              },
+            ],
+          },
+        },
+        { word: "configuration", 
+          hint: "1.배치,환경설정<br>2.외부의 필요,목적에 따라 유연한 설정", 
+          comment: {
+            title: "configuration",
+            parts: [
+              {
+                type: "명사 (configuration)",
+                example: "Check the database configuration file settings.",
+                translation: "데이터베이스 설정 파일 세팅을 확인하세요.",
+              },              
+              {
+                type: "동사 (configure)",
+                example: "We need to configure the nodes in a star topology.",
+                translation: "우리는 노드들을 별 모양 배치로 구성해야 합니다.",
+              },              
+              {
+                type: "형용사 (configured)",
+                example: "The configured data structure optimizes search time.",
+                translation: "배열된(구성된) 데이터 구조가 검색 시간을 최적화합니다.",
+              },              
+            ]
+          }
+        },
         {
           word: "create",
           hint: "1.창조하다,만들다",
@@ -1438,32 +1589,8 @@
           },
         },
         {
-          word: "structure",
-          hint: "1.구조,구성,체계<br>2.<생각·계획 등을>구성하다,조직화하다",
-          comment: {
-            title: "structure",
-            parts: [
-              {
-                type: "명사 (structure)",
-                example: "The building's structure is very strong.",
-                translation: "그 건물의 구조는 매우 튼튼하다.",
-              },
-              {
-                type: "동사 (structure)",
-                example: "The course is structured around three parts.",
-                translation: "그 과정은 세 부분으로 구성되어 있다.",
-              },
-              {
-                type: "형용사 (Structural)",
-                example: "The company has structural problems.",
-                translation: "그 회사는 구조적인 문제를 갖고 있다.",
-              },
-            ],
-          },
-        },
-        {
           word: "validation",
-          hint: "1.유효성검증,확인",
+          hint: "1.유효성 검증,확인",
           comment: {
             title: "validation",
             parts: [
@@ -1573,24 +1700,24 @@
           }
         },
         { word: "associate", 
-          hint: "1.연상시키다,어울리다<br>2.동료,준회원,준~", 
+          hint: "1.연관시키다,제휴하다<br>2.동료,준회원,준~", 
           comment: {
             title: "associate",
             parts: [
               {
                 type: "동사 (associate)",
-                example: "I associate that song with my childhood.",
-                translation: "저는 그 노래를 제 유년 시절과 연관 짓습니다.",
+                example: "You can associate data using a foreign key.",
+                translation: "외래 키를 사용하여 데이터를 연관시킬 수 있습니다.",
               },              
               {
                 type: "명사 (associate)",
-                example: "He is my business associate.",
-                translation: "그는 저의 사업 동료입니다,",
+                example: "The new associate learned the core Java functions.",
+                translation: "그 신입 직원은 핵심 자바 기능을 배웠습니다.",
               },              
               {
-                type: "형용사 (associate)",
-                example: "She holds an assciate degree",
-                translation: "그녀는 전문학사 학위를 가지고 있습니다.",
+                type: "형용사 (associated)",
+                example: "An associated table stores the user profile details.",
+                translation: "연관된 테이블이 사용자 프로필 세부 정보를 저장합니다.",
               },              
             ]
           }
@@ -1778,8 +1905,26 @@
         {
           word: "include",
           hint: "1.포함하다<br>2.범위 안에 특정 대상이 속하도록",
-          comment: `The total price includes tax and service charge.<br>
-                    (총 가격에 세금과 봉사료가 포함되어 있습니다.)`,
+          comment: {
+            title: "include",
+            parts: [
+              {
+                type: "동사 (include)",
+                example: "Use JOIN to include data from another table.",
+                translation: "다른 테이블의 데이터를 포함시키기 위해 JOIN을 사용하세요.",
+              },              
+              {
+                type: "명사 (inclusion)",
+                example: "Class inclusion is managed by the Java classpath.",
+                translation: "클래스 포함은 자바 클래스패스에 의해 관리됩니다.",
+              },              
+              {
+                type: "형용사 (inclusive)",
+                example: "The search range is inclusive of both start and end dates.",
+                translation: "검색 범위는 시작일과 종료일 모두를 포함합니다.",
+              },              
+            ]
+          }
         },
         {
           word: "import",
@@ -1802,9 +1947,27 @@
         },
         {
           word: "condition",
-          hint: "1.현재 상태,필요 조건",
-          comment: `We will go on a picnic, on the condition that it doesn't rain.<br>
-                    (비가 오지 않는다는 조건하에 우리는 소풍을 갈 것입니다.)`,
+          hint: "1.건강 상태,전제 조건",
+          comment: {
+            title: "condition",
+            parts: [
+              {
+                type: "동사 (condition)",
+                example: "The database must condition data integrity rules.",
+                translation: "데이터베이스는 데이터 무결성 규칙을 조건으로 해야 합니다.",
+              },              
+              {
+                type: "명사 (condition)",
+                example: "A race condition occurs in concurrent processing.",
+                translation: "동시 처리에서 경쟁 상태가 발생합니다.",
+              },              
+              {
+                type: "형용사 (conditional)",
+                example: "Use a conditional operator for simple flow control.",
+                translation: "간단한 흐름 제어를 위해 조건부 연산자를 사용하세요.",
+              },              
+            ]
+          }
         },
         {
           word: "whether",
@@ -1979,8 +2142,29 @@
             ]
           }
         },
-        { word: "with a", hint: "~을 사용해서" },
-        { word: "elapsed Time", hint: "경과 시간" },
+        { word: "elapse", 
+          hint: "1.(시간이)흐르다,경과하다", 
+          comment: {
+            title: "elapse",
+            parts: [
+              {
+                type: "동사 (elapse)",
+                example: "A timeout occurs if too much time elapses.",
+                translation: "너무 많은 시간이 경과하면 타임아웃이 발생합니다.",
+              },              
+              {
+                type: "명사 (elapsed time)",
+                example: "We measure the elapsed time for the transaction.",
+                translation: "우리는 트랜잭션의 경과 시간을 측정합니다.",
+              },              
+              {
+                type: "형용사 (lapsed)",
+                example: "Check the server logs for lapsed connections.",
+                translation: "만료된 연결에 대해 서버 로그를 확인하세요.",
+              },              
+            ]
+          }
+        },
         {
           word: "transient",
           hint: "1.일시적인",
@@ -2250,17 +2434,57 @@
           comment: `This ticket allows one person to enter the museum.<br>
                     (이 티켓은 한 사람이 박물관에 입장하는 것을 허용합니다.)`,
         },
-        {
-          word: "allows for",
-          hint: "1.~을 가능하게 한다,~에 대비하다.",
-          comment: `This design allows for greater flexibility.<br>
-                    (이 디자인은 더 큰 유연성을 가능하게 합니다.)`,
+        { word: "effect",
+          hint: "1.(어떤 행위의 결과)영향,효과",
+          comment: {
+            title: "effect",
+            parts: [
+              {
+                type: "명사 (effect)",
+                example: "The medicine had a positive effect on him.",
+                translation: "그 약은 그에게 긍정적인 효과가 있었다.",
+              },
+              {
+                type: "동사 (affect)",
+                example: "The weather will affect our travel plans.",
+                translation: "날씨가 우리의 여행 계획에 영향을 미칠 것이다",
+              },
+              {
+                type: "형용사 (effective)",
+                example: "This medicine is highly effective for pain.",
+                translation: "이 약은 통증에 매우 효과적이다.",
+              },
+              {
+                type: "부사 (effectively)",
+                example: "She can work effectively under pressure.",
+                translation: "그녀는 압박 속에서도 효과적으로 일할 수 있다.",
+              },
+            ]
+          }
         },
         {
           word: "influence",
-          hint: "1.영향,영향력,영향을 주다",
-          comment: `Social media can influence public opinion.<br>
-                    (소셜 미디어는 대중의 의견에 영향을 줄 수 있습니다.)`,
+          hint: "1.(변화를 일으키는 과정)영향,작용하다",
+          comment: {
+            title: "influence",
+            parts: [
+              {
+                type: "명사 (influence)",
+                example: "Social media has a huge influence on trends",
+                translation: "쇼셜 미디어는 트렌드에 큰 영향을 줍니다.",
+              },              
+              {
+                type: "동사 (influence)",
+                example: "His kindness will influence many people.",
+                translation: "그의 친절함은 많은 사람들에게 영향을 미칠 것입니다.",
+              },              
+              {
+                type: "형용사 (influential)",
+                example: "She is an influential figure in the city.",
+                translation: "그녀는 그 도시에서 영향력 있는 인물입니다.",
+              },              
+            ]
+          }
         },
         {
           word: "maintainable",
@@ -2550,34 +2774,6 @@
                 type: "부사 (ambiguously)",
                 example: "He ambiguously answered the question.",
                 translation: "그는 질문에 애매모호하게 대답했다.",
-              },
-            ]
-          }
-        },
-        { word: "effect",
-          hint: "1.결과,영향,효과",
-          comment: {
-            title: "effect",
-            parts: [
-              {
-                type: "명사 (effect)",
-                example: "The medicine had a positive effect on him.",
-                translation: "그 약은 그에게 긍정적인 효과가 있었다.",
-              },
-              {
-                type: "동사 (affect)",
-                example: "The weather will affect our travel plans.",
-                translation: "날씨가 우리의 여행 계획에 영향을 미칠 것이다",
-              },
-              {
-                type: "형용사 (effective)",
-                example: "This medicine is highly effective for pain.",
-                translation: "이 약은 통증에 매우 효과적이다.",
-              },
-              {
-                type: "부사 (effectively)",
-                example: "She can work effectively under pressure.",
-                translation: "그녀는 압박 속에서도 효과적으로 일할 수 있다.",
               },
             ]
           }
