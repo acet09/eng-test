@@ -324,7 +324,8 @@
         },
         {
           word: "supply",
-          hint: "1.공급하다, 제공하다<br>2.지속적, 물질적 자원 제공",
+          hint: `1. 필요한 물품이나 자원을 대량으로, 그리고 지속적으로 제공하다(보급).<br> 
+                2. 수요(Demand)에 맞춰 물건이나 에너지를 채워주다.`,
           comment: {
             title: "supply",
             parts: [
@@ -353,7 +354,8 @@
         },
         {
           word: "provide",
-          hint: "1.제공하다, 주다<br>2.추상적 행위 제공",
+          hint: `1. 필요한 것을 공식적으로 책임지고 준비하여 주거나 공급하다.<br> 
+                2. 시스템이나 환경이 특정한 기능이나 능력을 갖추도록 하다.`,
           comment: {
             title: "provide",
             parts: [
@@ -374,6 +376,37 @@
               },
             ],
           },
+        },
+        {
+          word: "offer",
+          hint: `1. 물건이나 기회 따위를 상대방에게 내놓거나 주다.<br> 
+                2. 판매나 계약을 위해 내놓는 가격이나 조건.<br>
+                3. 직장이나 자리를 주겠다는 제의.`,
+          comment: {
+            title: "offer",
+            parts: [
+              {
+                type: "동사 (Offer)",
+                example: "We offer robust API documentation to all users.",
+                translation: "우리는 모든 사용자에게 견고한 API 문서를 제공한다.",
+              },              
+              {
+                type: "명사 (Offer)",
+                example: "The job offer included stock options for engineers.",
+                translation: "그 일자리 제안에는 엔지니어를 위한 스톡옵션이 포함되었다.",
+              },              
+              {
+                type: "명사 (Offering)",
+                example: "Our latest product offering is a cloud service.",
+                translation: "우리의 최신 제품 제공물은 클라우드 서비스이다.",
+              },              
+              {
+                type: "형용사 (Offered)",
+                example: "The offered solution optimizes database queries.",
+                translation: "그 제안된 솔루션은 데이터베이스 쿼리를 최적화한다.",
+              },              
+            ]
+          }
         },
         {
           word: "receive",
@@ -904,9 +937,9 @@
         { word: "conversion", hint: "1.전환,변환<br>2.수량이나 형식의 변화" },
         {
           word: "transform",
-          hint: "1.변형시키다, 변모(결과/과정)<br>2.다른 물질로 만들어 본질적 변함",
+          hint: "1.변형시키다, 변환, 변모(결과/과정)<br>2.다른 물질로 만들어 본질적 변함",
           comment: {
-            title:"",
+            title:"transform",
             parts:[
               {
                 type:"동사 (Transform)",
@@ -970,9 +1003,23 @@
         },
         {
           word: "surrogate",
-          hint: "대리,대리인",
-          comment: `The team leader acted as a surrogate for the manager at the meeting.<br>
-                    (팀장은 회의에서 매니저의 대리인 역할을 했다.)`,
+          hint: `1. 다른 사람이나 사물을 대신하는 것<br> 
+                2. 대리인, 대용의.`,
+          comment: {
+            title: "surrogate",
+            parts: [
+              {
+                type: "명사 (Surrogate)",
+                example: "A proxy server acts as a surrogate for client requests.",
+                translation: "프록시 서버는 클라이언트 요청의 대용물 역할을 한다.",
+              },              
+              {
+                type: "형용사 (Surrogate)",
+                example: "The system uses a surrogate key for better indexing performance.",
+                translation: "시스템은 더 나은 인덱싱 성능을 위해 대리 키를 사용한다.",
+              },              
+            ]
+          }
         },
         {
           word: "unit",
@@ -1019,7 +1066,8 @@
         },
         {
           word: "evaluate",
-          hint: "1. 평가하다, 심사하다 (가치, 품질, 성능 등을 판단하거나 산정하다)<br>2. (수학) 계산하다 (수치 등을 따져서 값을 내다)",
+          hint: `1. 어떤 대상의 가치, 품질, 중요성 등을 판단하거나 분석하다.<br> 
+                2. 성능 분석, 위험 판단, 코드 품질 검토`,
           comment: {
             title: "evaluate",
             parts: [
@@ -2410,9 +2458,17 @@
         { word: "hierarchy", hint: "계층, 계급" },
         {
           word: "root",
-          hint: "1.(식물의)뿌리,근원,근본",
-          comment: `The problem has its root in our lack of communication.<br>
-                    (그 문제는 우리의 소통 부족에 근본이 있습니다.)`,
+          hint: "1. 식물의 뿌리, 사물의 근원 또는 기초.<br>2. 최고 권한 사용자 계정",
+          comment: {
+            title: "root",
+            parts: [
+              {
+                type: "명사 (Root)",
+                example: "Never run production services as the root user.",
+                translation: "루트 사용자로는 운영 서비스를 실행하지 마십시오.",
+              },              
+            ]
+          }
         },
         {
           word: "loop",
@@ -2930,12 +2986,6 @@
           },
         },
         {
-          word: "offer",
-          hint: "1.제공하다(선택할 수 있도록 제안하는 것)",
-          comment: `명사: We received a great job offer from a tech company.<br>
-                    (우리는 한 기술 회사로부터 좋은 입사 제안을 받았다.)`,
-        },
-        {
           word: "potential",
           hint: `1. 잠재적인, 가능성 있는 (아직 실현되지는 않았지만 앞으로 발전하거나 실현될 수 있는)<br> 
                 2. (물리/전기) 전위의`,
@@ -3090,26 +3140,9 @@
             ]
           }
         },
-        { word: "turned off",
-          hint: "1.꺼진<br>2.흥미를 잃은",
-          comment: {
-            title: "turned off",
-            parts: [
-              {
-                type: "동사구 (turned off)",
-                example: "He turned off the lights and went to bed.",
-                translation: "그는 불을 끄고 잠자리에 들었다.",
-              },
-              {
-                type: "동사구 (turned her off)",
-                example: "That rude comment really turned her off.",
-                translation: "그 무례한 발언은 그녀의 흥미를 완전히 떨어뜨렸다.",
-              },
-            ]
-          }
-        },
         { word: "transact",
-          hint: "1. 거래하다, 업무를 처리하다 (특히 금전적인 일이나 공식적인 사업을 다루다)<br>2. 쪼갤 수 없는 일련의 데이터 처리 과정을 수행 (컴퓨터 과학)",
+          hint: `1. 거래하다, 업무를 처리하다 (특히 금전적인 일이나 공식적인 사업을 다루다)<br>
+                2. 쪼갤 수 없는 일련의 데이터 처리 과정을 수행 (컴퓨터 과학)`,
           comment: {
             title: "transact",
             parts: [
@@ -3144,7 +3177,51 @@
           ]
           }
         },
-
+        { word: "Interpret",
+          hint: `1. 통역을 하다 (다른 언어를 통역하는 사람)<br>
+                2. 해석하다, 설명하다 (의미를 풀이하는 사람/도구)<br>
+                3. (컴퓨터 과학) 인터프리터 (고급 언어를 기계어로 즉시 번역하여 실행하는 프로그램)`,
+          comment: {
+            title: "Interpreter",
+            parts: [
+              {
+                type: "명사 (Interpreter)",
+                example: "The Python interpreter executes the script line by line.",
+                translation: "파이썬 인터프리터는 스크립트를 한 줄씩 실행한다.",
+              },
+              {
+                type: "동사 (Interpret)",
+                example: "The machine must interpret the instruction code instantly.",
+                translation: "기계는 명령 코드를 즉시 해석해야 한다.",
+              },
+              {
+                type: "명사 (Interpretation)",
+                example: "Debugging requires careful interpretation of the logs.",
+                translation: "디버깅은 로그에 대한 신중한 해석을 필요로 한다.",
+              },
+          ]
+          }
+        },
+        { word: "practice",
+          hint: `1. 실행, 실천 (어떤 일이나 기술을 실제로 행하는 행위)<br>
+                2. 연습, 훈련 (숙달을 위해 반복하는 행위)<br>
+                3. 관행, 습관 (특정 분야에서 일반적으로 따르는 방식)`,
+          comment: {
+            title: "practice",
+            parts: [
+              {
+                type: "명사 (Practice)",
+                example: "Daily coding practice enhances problem-solving skills.",
+                translation: "매일 코딩 연습은 문제 해결 능력을 향상시킨다.",
+              },
+              {
+                type: "동사 (Practice)",
+                example: "We practice writing unit tests before coding features.",
+                translation: "우리는 기능 코딩 전에 유닛 테스트 작성을 연습한다.",
+              },
+          ]
+          }
+        },
         // { word: "represent",
         //   hint: "1.대표하다,나타낸다",
         //   comment: {
