@@ -177,7 +177,7 @@
       </div>
       <footer>
         <!-- 업데이트 날짜 갱신 확인하기 -->
-        <span>last update - 26.03.15</span>
+        <span>last update - 26.03.21</span>
       </footer>
     </div>
     <script>
@@ -335,7 +335,7 @@
         },
         {
           word: "supply",
-          hint: `1. 필요한 물품이나 자원을 대량으로, 그리고 지속적으로 제공하다(보급).<br> 
+          hint: `1. 대량으로 그리고 지속적으로 공급하다.<br> 
                 2. 수요(Demand)에 맞춰 물건이나 에너지를 채워주다.`,
           comment: {
             title: "supply",
@@ -365,7 +365,7 @@
         },
         {
           word: "provide",
-          hint: `1. 필요한 것을 공식적으로 책임지고 준비하여 주거나 공급하다.<br> 
+          hint: `1. 책임지고 준비하여 제공하다.<br> 
                 2. 시스템이나 환경이 특정한 기능이나 능력을 갖추도록 하다.`,
           comment: {
             title: "provide",
@@ -995,10 +995,28 @@
           },
         },
         {
-          word: "additional",
-          hint: "1.추가적인,부가적인<br>2.이미 있는 것에 더해지는 것",
-          comment: `She requested an additional day off.<br>
-                    (그녀는 하루를 더 쉬겠다고 요청했습니다.)`,
+          word: "add",
+          hint: "1.더하다, 추가하다, 합치다",
+          comment: {
+            title: "add",
+            parts: [
+              {
+                type: "동사 (add)",
+                example: "The list adds a new string object.",
+                translation: "리스트는 새로운 문자열 객체를 추가합니다.",
+              },        
+              {
+                type: "명사 (addition)",
+                example: "The addition inproves code quality.",
+                translation: "그 추가(기능)은 코드 품질을 향상시킵니다.",
+              },             
+              {
+                type: "형용사 (additional)",
+                example: "Provide additional parameters here.",
+                translation: "여기에 추가 매개변수를 제공하세요.",
+              },             
+            ]
+          }
         },
         {
           word: "deduct",
@@ -1626,8 +1644,7 @@
         },
         {
           word: "identify",
-          hint: `1. 신원, 정체성 (존재의 본질이나 개별적인 특성)<br> 
-                2. 동일함, 일치 (두 개 이상의 대상이 같음)`,
+          hint: `1. 신원, 정체성 (존재의 본질이나 개별적인 특성)`,
           comment: {
             title: "identify",
             parts: [
@@ -1640,11 +1657,6 @@
                 type: "명사 (Identity)",
                 example: "We must identify the user before granting access.",
                 translation: "접근 권한을 부여하기 전에 사용자를 식별해야 한다.",
-              },              
-              {
-                type: "형용사 (Identical)",
-                example: "The staging server is identical to production.",
-                translation: "스테이징 서버는 프로덕션과 동일하다.",
               },              
             ]
           }
@@ -1727,7 +1739,7 @@
         },
         {
           word: "improve",
-          hint: "1.향상시키다, 개선하다<br>2.향상, 개선,발전",
+          hint: "1.향상시키다, 개선하다<br>2.향상, 개선, 발전",
           comment: {
             title: "improve",
             parts: [
@@ -2221,20 +2233,38 @@
         },
         {
           word: "determine",
-          hint: "1.결정한, 굳게 결심한<br>2.행위/과정",
-          comment: `He is determined to finish the race, no matter what.<br>
-                    (그는 무슨 일이 있어도 경주를 끝마치기로 결심했다.)`,
+          hint: "1.확정,결정하다.(과정을 통해 결론)",
+          comment: {
+            title: "determine",
+            parts: [
+              {
+                type: "동사 (determine)",
+                example: "Methods determine the return type.",
+                translation: "매서드들은 반환 타입을 결정합니다.",
+              },              
+              {
+                type: "명사 (determination)",
+                example: "Type determination occurs at runtime.",
+                translation: "타입 결정은 실행 시간에 일어납니다.",
+              },              
+              {
+                type: "형용사 (determined)",
+                example: "The order is determined by a key.",
+                translation: "순서는 키에 의해 결정됩니다.",
+              },              
+            ]
+          }
         },
         {
           word: "decide",
-          hint: "1.결정적인, 결단력 있는",
+          hint: "1.결정적인, 결단력 있는(선택지 중 최종 선택)",
           comment: {
             title: "decide",
             parts: [
               {
                 type: "동사 (decide)",
-                example: "This victory was a decisive moment in the war.",
-                translation: "이 승리는 전쟁에서 결정적인 순간이었다.",
+                example: "Programs decide whitch path to take",
+                translation: "프로그램들은 어떤 경로를 취할지 결정합니다.",
               },
               {
                 type: "명사 (decision)",
@@ -2807,11 +2837,6 @@
                 translation: "날씨가 우리의 여행 계획에 영향을 미칠 것이다",
               },
               {
-                type: "형용사 (effective)",
-                example: "This medicine is highly effective for pain.",
-                translation: "이 약은 통증에 매우 효과적이다.",
-              },
-              {
                 type: "부사 (effectively)",
                 example: "She can work effectively under pressure.",
                 translation: "그녀는 압박 속에서도 효과적으로 일할 수 있다.",
@@ -3218,9 +3243,9 @@
         { word: "Interpret",
           hint: `1. 통역을 하다 (다른 언어를 통역하는 사람)<br>
                 2. 해석하다, 설명하다 (의미를 풀이하는 사람/도구)<br>
-                3. (컴퓨터 과학) 인터프리터 (고급 언어를 기계어로 즉시 번역하여 실행하는 프로그램)`,
+                3. 고급 언어를 기계어로 즉시 번역...`,
           comment: {
-            title: "Interpreter",
+            title: "Interpret",
             parts: [
               {
                 type: "명사 (Interpreter)",
@@ -3231,11 +3256,6 @@
                 type: "동사 (Interpret)",
                 example: "The machine must interpret the instruction code instantly.",
                 translation: "기계는 명령 코드를 즉시 해석해야 한다.",
-              },
-              {
-                type: "명사 (Interpretation)",
-                example: "Debugging requires careful interpretation of the logs.",
-                translation: "디버깅은 로그에 대한 신중한 해석을 필요로 한다.",
               },
           ]
           }
