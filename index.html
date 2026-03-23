@@ -22,7 +22,7 @@
       .container {
         width: 100%;
         max-width: 650px;
-        min-width: 500px;
+        min-width: 350px;
         background-color: white;
         padding: 30px;
         border-radius: 10px;
@@ -390,9 +390,9 @@
         },
         {
           word: "offer",
-          hint: `1. 물건이나 기회 따위를 상대방에게 내놓거나 주다.<br> 
+          hint: `1. 물건이나 기회 따위를 상대방에게 제공하다.<br> 
                 2. 판매나 계약을 위해 내놓는 가격이나 조건.<br>
-                3. 직장이나 자리를 주겠다는 제의.`,
+                3. 직장이나 자리를 주겠다는 제안.`,
           comment: {
             title: "offer",
             parts: [
@@ -461,8 +461,8 @@
               },
               {
                 type: "명사 (resolution)",
-                example: "The new year's resolution is to exercise daily.",
-                translation: "새해 결심은 매일 운동하는 것이다.",
+                example: "Set the screen resolution to 4K",
+                translation: "화면 해상도를 4K로 설정하세요.",
               },
             ],
           },
@@ -470,21 +470,29 @@
         {
           word: "serialize",
           hint: "1.직렬화하다, 연속적으로 만들다.",
-          comment: `You need to serialize the object before saving it to a file.<br>
-                    (파일에 저장하기 전에 객체를 직렬화해야 합니다.)`,
-        },
-        {
-          word: "serialization",
-          hint: "1.직렬화<br>2.Object,Data를 바이트 스트림 형태로 변환하는 포맷 기술",
           comment: {
-            title: "serialization",
+            title: "serialize",
             parts: [
+              {
+                type: "동사 (Serialize)",
+                example:
+                  "Serialize the object into a JSON string",
+                translation:
+                  "객체를 JSON 문자열로 직렬화하세요.",
+              },
               {
                 type: "명사 (serialization)",
                 example:
-                  "Serialization is the process of converting an object into a stream of bytes.",
+                  "Serialization is needed for data transfer",
                 translation:
-                  "직렬화는 객체를 바이트 스트림으로 변환하는 과정입니다.",
+                  "데이터 전송을 위해 직렬화가 필요합니다.",
+              },
+              {
+                type: "형용사 (Serializable)",
+                example:
+                  "Ensure the class is serializable",
+                translation:
+                  "클래스가 직렬화 가능한지 확인하세요.",
               },
             ],
           },
@@ -511,8 +519,26 @@
         {
           word: "synchronize",
           hint: "1.동시에 발생하다, 동기화하다",
-          comment: `My phone calendar is synchronized with my computer.<br>
-                    (내 휴대폰 캘린더는 컴퓨터와 동기화되어 있다.)`,
+          comment: {
+            title: "synchronize",
+              parts: [
+                {
+                  type: "명사(Synchronization)",
+                  example:"Data synchronization ensures consistency.",
+                  translation:"이것은 동기 방식의 API 요청입니다."
+                },
+                {
+                  type: "형용사(Synchronous)",
+                  example:"This is a synchronous API request.",
+                  translation:"이것은 동기 방식의 API 요청입니다."
+                },
+                {
+                  type: "부사(Synchronously)",
+                  example:"Tasks are executed synchronously here",
+                  translation:"여기서는 작업들이 동기적으로 실행됩니다."
+                },
+                ]
+          }          
         },
         {
           word: "request",
