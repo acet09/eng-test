@@ -199,6 +199,19 @@
       color: var(--text); outline: none; transition: border-color .2s;
     }
     .input-wrap input:focus { border-color: var(--accent); }
+    .word-length-hint {
+      display: none;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 6px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 8px 0;
+      user-select: none;
+      transition: color .3s;
+    }
+    .word-length-hint.show { display: block; }
     .input-wrap input.correct { border-color: var(--green); }
     .input-wrap input.wrong   { border-color: var(--red); }
     .input-submit {
@@ -392,6 +405,7 @@
       <input type="text" id="answerInput" placeholder="영단어를 입력하세요..." autocomplete="off" spellcheck="false">
       <button class="input-submit" id="submitBtn">↵</button>
     </div>
+    <div class="word-length-hint" id="wordLengthHint"></div>
 
     <div class="feedback" id="feedbackBox"></div>
 
@@ -604,6 +618,7 @@ const choicesWrap     = document.getElementById('choicesWrap');
 const inputWrap       = document.getElementById('inputWrap');
 const answerInput     = document.getElementById('answerInput');
 const submitBtn       = document.getElementById('submitBtn');
+const wordLengthHint  = document.getElementById('wordLengthHint');
 const feedbackBox     = document.getElementById('feedbackBox');
 const sentencesWrap   = document.getElementById('sentencesWrap');
 const sentencesToggle = document.getElementById('sentencesToggle');
@@ -678,6 +693,7 @@ function goHome() {
   sentencesToggle.classList.remove('open');
   sentencesPanel.classList.remove('open');
   sentencesPanel.innerHTML = '';
+  wordLengthHint.classList.remove('show');
   nextBtn.disabled = true;
   scoreScreen.classList.remove('show');
   gameoverScreen.classList.remove('show');
@@ -690,7 +706,7 @@ function goHome() {
 }
 function confirmGoHome() {
   if (!gameStarted) { goHome(); return; }
-  if (confirm(`정말 종료하시겠어요? 지금까지의 결과로 채점됩니다.`)) goHome();
+  if (confirm('게임을 종료합니다. 채점 하시겠습니까?')) goHome();
 }
 homeBtn.addEventListener('click', confirmGoHome);
 logoHome.addEventListener('click', confirmGoHome);
@@ -729,7 +745,12 @@ function handleTimeout() {
   scoreTimeout++;
   showFeedback('timeout', `⏰ 시간 초과! 정답: <strong style="color:var(--text)">${currentWord.word}</strong>`);
   if (gameMode === 'choice') markChoicesOnTimeout();
-  else { answerInput.classList.add('wrong'); answerInput.disabled = true; submitBtn.disabled = true; }
+  else {
+    answerInput.classList.add('wrong'); answerInput.disabled = true; submitBtn.disabled = true;
+    wordLengthHint.textContent = currentWord.word;
+    wordLengthHint.style.color = 'var(--warn)';
+    wordLengthHint.style.letterSpacing = '2px';
+  }
   showSentences();
   // lives check on timeout
   if (maxLives > 0) {
@@ -819,6 +840,7 @@ function nextQuestion() {
   sentencesWrap.style.display = 'none';
   sentencesToggle.classList.remove('open');
   sentencesPanel.classList.remove('open');
+  wordLengthHint.classList.remove('show');
   nextBtn.disabled = true;
 
   // Pick random unused word
@@ -837,6 +859,7 @@ function nextQuestion() {
 
   if (gameMode === 'choice') {
     inputWrap.style.display = 'none';
+    wordLengthHint.classList.remove('show');
     choicesWrap.style.display = 'grid';
     renderChoices();
   } else {
@@ -846,6 +869,10 @@ function nextQuestion() {
     answerInput.className = '';
     answerInput.disabled = false;
     submitBtn.disabled = false;
+    wordLengthHint.textContent = currentWord.word.split('').map(ch => ch === ' ' ? '  ' : '_').join(' ');
+    wordLengthHint.style.color = 'var(--text-muted)';
+    wordLengthHint.style.letterSpacing = '6px';
+    wordLengthHint.classList.add('show');
     setTimeout(() => answerInput.focus(), 50);
   }
 
@@ -902,7 +929,7 @@ function markChoicesOnTimeout() {
 //  QUIT GAME
 // ══════════════════════════════════════════════════════════
 quitBtn.addEventListener('click', () => {
-  if (!gameStarted || !confirm('정말 종료하시겠어요? 지금까지의 결과로 채점됩니다.')) return;
+  if (!gameStarted || !confirm('게임을 종료합니다. 채점 하시겠습니까?')) return;
   // 현재 문제에 아직 답하지 않았으면 오답 처리
   if (!answered) { scoreWrong++; qDone++; }
   showResult(true);
@@ -921,6 +948,9 @@ function checkShortAnswer() {
   if (val === currentWord.word.toLowerCase()) {
     answerInput.classList.add('correct');
     answerInput.disabled = true; submitBtn.disabled = true;
+    wordLengthHint.textContent = currentWord.word;
+    wordLengthHint.style.color = 'var(--green)';
+    wordLengthHint.style.letterSpacing = '2px';
     scoreCorrect++;
     showFeedback('ok', '✓ 정답입니다!');
     showSentences();
@@ -930,6 +960,9 @@ function checkShortAnswer() {
     answerInput.disabled = true; submitBtn.disabled = true;
     scoreWrong++;
     if (maxLives > 0) { lives--; renderLives(); }
+    wordLengthHint.textContent = currentWord.word;
+    wordLengthHint.style.color = 'var(--red)';
+    wordLengthHint.style.letterSpacing = '2px';
     showFeedback('fail', `✗ 오답! 정답: <strong style="color:var(--text)">${currentWord.word}</strong>`);
     showSentences();
     if (maxLives > 0 && lives <= 0) { setTimeout(showGameOver, 900); return; }
@@ -1023,7 +1056,7 @@ function showResult(isQuit = false) {
   document.getElementById('scoreWrong').textContent = scoreWrong;
   document.getElementById('scoreTimeout').textContent = scoreTimeout;
 
-  const msgs = ['🎯 완벽합니다! 최고예요!', '👏 훌륭해요! 거의 다 맞췄네요.', '💪 절반 이상! 계속 연습하세요.', '📚 아직 갈 길이 있어요. 다시 도전!'];
+  const msgs = ['🎯 완벽합니다! 최고예요!', '👏 훌륭해요! 거의 다 맞췄네요.', '💪 절반 이상! 계속 연습하세요.', '📚 아직 갈 길이 멉니다. 다시 도전!'];
   const msgIdx = pct >= 90 ? 0 : pct >= 70 ? 1 : pct >= 50 ? 2 : 3;
   const prefix = isQuit ? '⚡ 중도 종료 · ' : '';
   document.getElementById('scoreMsg').textContent = prefix + msgs[msgIdx];
